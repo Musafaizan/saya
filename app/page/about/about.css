@@ -1,0 +1,324 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;0,900;1,400&family=Dancing+Script:wght@600&display=swap');
+
+/* ── About Section ── */
+.about {
+  position: relative;
+  background-color: #ffffff;
+  padding: 100px 80px;
+  overflow: hidden;
+  font-family: 'DM Sans', sans-serif;
+  scroll-margin-top: 80px;
+}
+
+/* ── Decorative Dots ── */
+.about__dot {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+  transform: rotate(45deg);
+  z-index: 0;
+}
+.about__dot--orange { background-color: #f5a623; top: 60px;     left: 6%;   }
+.about__dot--green  { background-color: #4caf82; bottom: 80px;  left: 42%;  }
+.about__dot--pink   { background-color: #e91e8c; top: 40%;      right: 5%;  }
+
+/* ── Inner layout ── */
+.about__inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ────────────────────────────
+   LEFT — Text
+──────────────────────────── */
+.about__content {
+  flex: 0 0 48%;
+  max-width: 48%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Tagline */
+.about__tagline {
+  font-family: 'Dancing Script', cursive;
+  font-size: 22px;
+  font-weight: 600;
+  color: #f07b2f;
+  margin: 0 0 10px 0;
+  letter-spacing: 0.02em;
+}
+
+/* Heading */
+.about__heading {
+  font-family: 'DM Sans', sans-serif;
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 900;
+  color: #111827;
+  line-height: 1.15;
+  margin: 0 0 20px 0;
+  letter-spacing: -0.5px;
+}
+
+.about__heading-highlight {
+  color: #f07b2f;
+}
+
+/* Divider */
+.about__divider {
+  width: 56px;
+  height: 4px;
+  background: linear-gradient(90deg, #f07b2f, #f5a623);
+  border-radius: 99px;
+  margin-bottom: 24px;
+}
+
+/* Body text */
+.about__body {
+  font-size: 16px;
+  font-weight: 400;
+  color: #4b5563;
+  line-height: 1.85;
+  margin: 0 0 16px 0;
+  max-width: 460px;
+}
+
+.about__body strong {
+  color: #1f325a;
+  font-weight: 700;
+}
+
+/* Button */
+.about__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #f5a623;
+  color: #fff;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  padding: 16px 36px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  width: fit-content;
+  text-decoration: none;
+  margin-top: 12px;
+  box-shadow: 0 8px 24px rgba(245, 166, 35, 0.35);
+  transition: background 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
+}
+
+.about__btn:hover {
+  background-color: #e0941a;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(245, 166, 35, 0.45);
+}
+
+.about__btn-icon {
+  font-size: 15px;
+}
+
+/* ────────────────────────────
+   RIGHT — Stats + Quote
+──────────────────────────── */
+.about__right {
+  flex: 0 0 46%;
+  max-width: 46%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: relative;
+}
+
+/* Floating badge */
+.about__badge {
+  position: absolute;
+  top: -20px;
+  right: 0;
+  background: linear-gradient(135deg, #1f325a, #2d4a80);
+  color: #fff;
+  border-radius: 14px;
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 8px 24px rgba(31, 50, 90, 0.25);
+  z-index: 2;
+}
+
+.about__badge-year {
+  font-size: 18px;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+}
+
+.about__badge-label {
+  font-size: 11px;
+  font-weight: 500;
+  opacity: 0.8;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* Stats grid */
+.about__stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 36px;
+}
+
+.about__stat {
+  background-color: #edfaf6;
+  border-radius: 16px;
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid rgba(76, 175, 130, 0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.about__stat:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(76, 175, 130, 0.15);
+}
+
+.about__stat-number {
+  font-size: 36px;
+  font-weight: 900;
+  color: #f07b2f;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+
+.about__stat-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: #6b7280;
+  text-align: center;
+  letter-spacing: 0.03em;
+}
+
+/* Quote card */
+.about__quote {
+  background: linear-gradient(135deg, #edfaf6 0%, #fff8ed 100%);
+  border-radius: 16px;
+  padding: 24px 28px;
+  border-left: 4px solid #f5a623;
+  position: relative;
+}
+
+.about__quote-mark {
+  font-size: 64px;
+  line-height: 0.6;
+  color: #f5a623;
+  font-family: Georgia, serif;
+  opacity: 0.4;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.about__quote-text {
+  font-size: 15px;
+  font-style: italic;
+  color: #374151;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ── Tablet (≤ 1024px) ── */
+@media (max-width: 1024px) {
+  .about {
+    padding: 80px 40px;
+  }
+
+  .about__inner {
+    gap: 40px;
+  }
+
+  .about__content {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+
+  .about__right {
+    flex: 0 0 46%;
+    max-width: 46%;
+  }
+}
+
+/* ── Mobile (≤ 768px) ── */
+@media (max-width: 768px) {
+  .about {
+    padding: 60px 24px;
+  }
+
+  .about__inner {
+    flex-direction: column;
+    gap: 48px;
+  }
+
+  .about__content {
+    flex: unset;
+    max-width: 100%;
+    align-items: center;
+    text-align: center;
+  }
+
+  .about__body {
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .about__divider {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .about__right {
+    flex: unset;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .about__badge {
+    top: -16px;
+    right: 12px;
+  }
+
+  .about__dot--orange,
+  .about__dot--green,
+  .about__dot--pink {
+    display: none;
+  }
+}
+
+/* ── Small Mobile (≤ 400px) ── */
+@media (max-width: 400px) {
+  .about {
+    padding: 48px 16px;
+  }
+
+  .about__stat-number {
+    font-size: 28px;
+  }
+
+  .about__stats {
+    gap: 12px;
+  }
+
+  .about__btn {
+    padding: 14px 28px;
+    font-size: 13px;
+  }
+}

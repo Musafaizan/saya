@@ -5,7 +5,7 @@ import heroImg from "../../../public/assets/boyimg.png";
 
 const Hero = () => {
   return (
-    <section className="hero">
+    <section className="hero" id="hero">
       {/* Decorative Dots */}
       <span className="hero__dot hero__dot--pink-top" />
       <span className="hero__dot hero__dot--pink-right" />

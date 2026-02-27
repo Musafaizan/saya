@@ -1,16 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;900&display=swap');
 
-/* ── Base ── */
+/* ── Base — Fixed + Frosted Glass ── */
 .navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 40px;
   height: 72px;
-  background-color: #ffffff;
-  font-family:  sans-serif;
-  position: relative;
-  /* z-index: 100; */
+  font-family: 'DM Sans', sans-serif;
+
+  /* Fixed to top */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+
+  /* Transparent frosted glass */
+  background-color: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  /* Subtle bottom border */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
 }
 
 /* ── Logo ── */
@@ -37,7 +49,7 @@
   white-space: nowrap;
 }
 
-/* ── Links (Desktop — centered absolutely) ── */
+/* ── Links (Desktop — true center) ── */
 .navbar__links {
   display: flex;
   align-items: center;
@@ -45,8 +57,6 @@
   list-style: none;
   margin: 0;
   padding: 0;
-
-  /* true center of the navbar */
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -60,7 +70,7 @@
   text-decoration: none;
   font-size: 15px;
   font-weight: 400;
-  color: #9ca3af;
+  color: #6b7280;
   letter-spacing: 0.01em;
   padding-bottom: 4px;
   border-bottom: 2px solid transparent;
@@ -105,7 +115,7 @@
   transform-origin: center;
 }
 
-/* Hamburger → X animation */
+/* Hamburger → X */
 .navbar__hamburger--open span:nth-child(1) {
   transform: translateY(7px) rotate(45deg);
 }
@@ -122,7 +132,6 @@
   .navbar__links {
     gap: 24px;
   }
-
   .navbar__link {
     font-size: 14px;
   }
@@ -134,13 +143,14 @@
     padding: 0 20px;
   }
 
-  /* Hide absolute-positioned desktop links */
   .navbar__links {
     position: fixed;
     top: 72px;
     left: 0;
     right: 0;
-    background-color: #f0f4f8;
+    background-color: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
     flex-direction: column;
     align-items: center;
     gap: 0;
@@ -149,6 +159,7 @@
     opacity: 0;
     transition: transform 0.35s ease, opacity 0.3s ease;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
     z-index: 99;
   }
 
@@ -182,7 +193,6 @@
     color: #111827;
   }
 
-  /* Show hamburger */
   .navbar__hamburger {
     display: flex;
   }
@@ -193,7 +203,6 @@
   .navbar__brand-name {
     font-size: 18px;
   }
-
   .navbar__logo-img {
     height: 28px !important;
   }

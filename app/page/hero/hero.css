@@ -11,6 +11,7 @@
   padding: 70px 80px;
   overflow: hidden;
   font-family: 'DM Sans', sans-serif;
+  scroll-margin-top: 80px;
 }
 
 /* ── Decorative Dots ── */

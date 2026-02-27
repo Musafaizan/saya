@@ -1,0 +1,279 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;0,900;1,400&family=Dancing+Script:wght@600&display=swap');
+
+/* ── Section ── */
+.facilities {
+  position: relative;
+  background-color: #edfaf6;
+  padding: 100px 80px;
+  overflow: hidden;
+  font-family: 'DM Sans', sans-serif;
+  scroll-margin-top: 80px;
+}
+
+/* ── Decorative Dots ── */
+.fac__dot {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+  transform: rotate(45deg);
+  z-index: 0;
+}
+.fac__dot--orange { background-color: #f5a623; top: 60px;     right: 8%;  }
+.fac__dot--green  { background-color: #4caf82; bottom: 100px; left: 5%;   }
+.fac__dot--pink   { background-color: #e91e8c; top: 45%;      left: 48%;  }
+
+/* ── Inner ── */
+.facilities__inner {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 56px;
+}
+
+/* ── Header ── */
+.facilities__header {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.facilities__tagline {
+  font-family: 'Dancing Script', cursive;
+  font-size: 22px;
+  font-weight: 600;
+  color: #f07b2f;
+  margin: 0 0 10px 0;
+  letter-spacing: 0.02em;
+}
+
+.facilities__heading {
+  font-family: 'DM Sans', sans-serif;
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 900;
+  color: #111827;
+  line-height: 1.15;
+  margin: 0 0 16px 0;
+  letter-spacing: -0.5px;
+}
+
+.facilities__heading-highlight {
+  color: #f07b2f;
+}
+
+.facilities__divider {
+  width: 56px;
+  height: 4px;
+  background: linear-gradient(90deg, #f07b2f, #f5a623);
+  border-radius: 99px;
+  margin-bottom: 20px;
+}
+
+.facilities__subtitle {
+  font-size: 16px;
+  color: #6b7280;
+  line-height: 1.7;
+  max-width: 520px;
+  margin: 0;
+}
+
+/* ── Cards Grid ── */
+.facilities__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  width: 100%;
+}
+
+/* ── Card — image background base ── */
+.fac__card {
+  position: relative;          /* required for fill image + overlay */
+  overflow: hidden;
+  border-radius: 20px;
+  min-height: 340px;
+  cursor: default;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+  /* Fallback color shown until image is added */
+  background-color: #1f325a;
+}
+
+/* Top accent bar */
+.fac__card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background-color: var(--card-color);
+  border-radius: 20px 20px 0 0;
+  z-index: 3;
+}
+
+.fac__card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.2);
+}
+
+/* ── Background Image (Next.js fill) ── */
+.fac__card-bg-img {
+  object-fit: cover !important;
+  object-position: center !important;
+  z-index: 0;
+}
+
+/* ── Dark gradient overlay ── */
+.fac__card-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: 20px;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.82) 0%,
+    rgba(0, 0, 0, 0.45) 50%,
+    rgba(0, 0, 0, 0.15) 100%
+  );
+}
+
+/* ── Card content — sits above overlay ── */
+.fac__card-content {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  padding: 28px 24px 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+/* ── Icon wrap ── */
+.fac__card-icon-wrap {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background-color: var(--card-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+  flex-shrink: 0;
+  margin-bottom: 4px;
+}
+
+/* ── Title ── */
+.fac__card-title {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: -0.2px;
+}
+
+/* ── Description ── */
+.fac__card-desc {
+  font-size: 13.5px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.82);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ── Bottom accent line ── */
+.fac__card-line {
+  display: block;
+  height: 3px;
+  width: 36px;
+  background-color: var(--card-color);
+  border-radius: 99px;
+  margin-top: 6px;
+  opacity: 0.7;
+  transition: width 0.3s ease, opacity 0.3s ease;
+}
+
+.fac__card:hover .fac__card-line {
+  width: 60px;
+  opacity: 1;
+}
+
+/* ── Bottom Quote Banner ── */
+.facilities__quote-banner {
+  background: linear-gradient(135deg, #1f325a, #2d4a80);
+  border-radius: 20px;
+  padding: 36px 48px;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  width: 100%;
+  box-shadow: 0 12px 36px rgba(31, 50, 90, 0.2);
+}
+
+.facilities__quote-mark {
+  font-size: 72px;
+  line-height: 0.65;
+  color: #f5a623;
+  font-family: Georgia, serif;
+  flex-shrink: 0;
+  margin-top: 6px;
+}
+
+.facilities__quote-text {
+  font-size: 17px;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.75;
+  margin: 0;
+  padding-top: 8px;
+}
+
+/* ── Tablet (≤ 1024px) ── */
+@media (max-width: 1024px) {
+  .facilities {
+    padding: 80px 40px;
+  }
+  .facilities__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ── Mobile (≤ 768px) ── */
+@media (max-width: 768px) {
+  .facilities {
+    padding: 60px 24px;
+  }
+  .facilities__inner {
+    gap: 40px;
+  }
+  .facilities__grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .fac__card {
+    min-height: 280px;
+  }
+  .facilities__quote-banner {
+    padding: 28px 24px;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .facilities__quote-mark { font-size: 52px; }
+  .facilities__quote-text { font-size: 15px; }
+  .fac__dot--orange,
+  .fac__dot--green,
+  .fac__dot--pink { display: none; }
+}
+
+/* ── Small Mobile (≤ 400px) ── */
+@media (max-width: 400px) {
+  .facilities { padding: 48px 16px; }
+  .fac__card { min-height: 260px; }
+  .facilities__quote-banner { padding: 22px 18px; }
+}

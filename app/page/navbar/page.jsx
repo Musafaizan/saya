@@ -8,7 +8,7 @@ const Navbar = () => {
   const [active, setActive] = useState("Home");
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const links = ["Home", "Pages", "Blog", "Donations", "Shop", "Contacts"];
+  const links = ["Home", "About us", "Facilities", "Zakat", "Bank", "Contacts"];
 
   return (
     <nav className="navbar">
@@ -23,10 +23,50 @@ const Navbar = () => {
         {links.map((link) => (
           <li key={link} className="navbar__item">
             <a
-              href="#"
+              href={
+                link === "Home"
+                  ? "#hero"
+                  : link === "About us"
+                  ? "#about"
+                  : link === "Facilities"
+                  ? "#facilities"
+                  : link === "Zakat"
+                  ? "#zakat"
+                  : link === "Bank"
+                  ? "#bank"
+                  : "#"
+              }
               className={`navbar__link ${active === link ? "navbar__link--active" : ""}`}
               onClick={(e) => {
                 e.preventDefault();
+
+                if (link === "Home") {
+                  const heroSection = document.getElementById("hero");
+                  if (heroSection) {
+                    heroSection.scrollIntoView({ behavior: "smooth", block: "start" });
+                  }
+                } else if (link === "About us") {
+                  const aboutSection = document.getElementById("about");
+                  if (aboutSection) {
+                    aboutSection.scrollIntoView({ behavior: "smooth", block: "start" });
+                  }
+                } else if (link === "Facilities") {
+                  const facilitiesSection = document.getElementById("facilities");
+                  if (facilitiesSection) {
+                    facilitiesSection.scrollIntoView({ behavior: "smooth", block: "start" });
+                  }
+                } else if (link === "Zakat") {
+                  const zakatSection = document.getElementById("zakat");
+                  if (zakatSection) {
+                    zakatSection.scrollIntoView({ behavior: "smooth", block: "start" });
+                  }
+                } else if (link === "Bank") {
+                  const bankSection = document.getElementById("bank");
+                  if (bankSection) {
+                    bankSection.scrollIntoView({ behavior: "smooth", block: "start" });
+                  }
+                }
+
                 setActive(link);
                 setMenuOpen(false);
               }}
