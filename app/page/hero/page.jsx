@@ -11,6 +11,30 @@ const Hero = () => {
       <span className="hero__dot hero__dot--pink-right" />
       <span className="hero__dot hero__dot--green-mid" />
       <span className="hero__dot hero__dot--green-bottom" />
+      {/* ── Paste these stars inside your <section className="hero"> ── */}
+
+{/* Decorative diamond dots */}
+<span className="hero__dot hero__dot--pink-top" />
+<span className="hero__dot hero__dot--pink-right" />
+<span className="hero__dot hero__dot--green-mid" />
+<span className="hero__dot hero__dot--green-bottom" />
+
+{/* Floating animated stars */}
+<span className="hero__star hero__star--s1">★</span>
+<span className="hero__star hero__star--s2">★</span>
+<span className="hero__star hero__star--s3">★</span>
+<span className="hero__star hero__star--s4">✦</span>
+<span className="hero__star hero__star--s5">★</span>
+<span className="hero__star hero__star--s6">✦</span>
+<span className="hero__star hero__star--s7">★</span>
+<span className="hero__star hero__star--s8">✦</span>
+<span className="hero__star hero__star--s9">★</span>
+<span className="hero__star hero__star--s10">★</span>
+<span className="hero__star hero__star--s11">✦</span>
+<span className="hero__star hero__star--s12">★</span>
+<span className="hero__star hero__star--s13">✦</span>
+<span className="hero__star hero__star--s14">★</span>
+<span className="hero__star hero__star--s15">✦</span>
 
       {/* Left Content */}
       <div className="hero__content">

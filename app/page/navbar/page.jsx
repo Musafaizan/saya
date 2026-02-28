@@ -34,6 +34,8 @@ const Navbar = () => {
                   ? "#zakat"
                   : link === "Bank"
                   ? "#bank"
+                  : link === "Contacts"
+                  ? "#contact"
                   : "#"
               }
               className={`navbar__link ${active === link ? "navbar__link--active" : ""}`}
@@ -64,6 +66,11 @@ const Navbar = () => {
                   const bankSection = document.getElementById("bank");
                   if (bankSection) {
                     bankSection.scrollIntoView({ behavior: "smooth", block: "start" });
+                  }
+                } else if (link === "Contacts") {
+                  const contactSection = document.getElementById("contact");
+                  if (contactSection) {
+                    contactSection.scrollIntoView({ behavior: "smooth", block: "start" });
                   }
                 }
 

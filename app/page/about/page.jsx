@@ -12,10 +12,27 @@ const About = () => {
   return (
     <section className="about">
 
-      {/* Decorative dots — same style as hero */}
+      {/* ── Decorative diamond dots ── */}
       <span className="about__dot about__dot--orange" />
       <span className="about__dot about__dot--green"  />
       <span className="about__dot about__dot--pink"   />
+
+      {/* ── Floating animated stars ── */}
+      <span className="about__star about__star--s1">★</span>
+      <span className="about__star about__star--s2">✦</span>
+      <span className="about__star about__star--s3">★</span>
+      <span className="about__star about__star--s4">✦</span>
+      <span className="about__star about__star--s5">★</span>
+      <span className="about__star about__star--s6">★</span>
+      <span className="about__star about__star--s7">✦</span>
+      <span className="about__star about__star--s8">★</span>
+      <span className="about__star about__star--s9">✦</span>
+      <span className="about__star about__star--s10">★</span>
+      <span className="about__star about__star--s11">★</span>
+      <span className="about__star about__star--s12">✦</span>
+      <span className="about__star about__star--s13">★</span>
+      <span className="about__star about__star--s14">✦</span>
+      <span className="about__star about__star--s15">★</span>
 
       <div className="about__inner" id="about">
 

@@ -39,10 +39,7 @@ function BankCard({ bank, delay }) {
   };
 
   return (
-    <div
-      className="bank-card"
-      style={{ animationDelay: `${delay}s` }}
-    >
+    <div className="bank-card" style={{ animationDelay: `${delay}s` }}>
       {copied && <span className="copy-toast">Copied!</span>}
 
       <div className="bank-card__logo">
@@ -79,11 +76,29 @@ function BankCard({ bank, delay }) {
 export default function DonateSection() {
   return (
     <section className="donate-section" id="bank">
-      {/* Floating decorative dots */}
+
+      {/* ── Decorative diamond dots ── */}
       <span className="dot dot--pink1" />
       <span className="dot dot--pink2" />
       <span className="dot dot--green1" />
       <span className="dot dot--green2" />
+
+      {/* ── Floating animated stars ── */}
+      <span className="bank__star bank__star--s1">★</span>
+      <span className="bank__star bank__star--s2">✦</span>
+      <span className="bank__star bank__star--s3">★</span>
+      <span className="bank__star bank__star--s4">✦</span>
+      <span className="bank__star bank__star--s5">★</span>
+      <span className="bank__star bank__star--s6">★</span>
+      <span className="bank__star bank__star--s7">✦</span>
+      <span className="bank__star bank__star--s8">★</span>
+      <span className="bank__star bank__star--s9">✦</span>
+      <span className="bank__star bank__star--s10">★</span>
+      <span className="bank__star bank__star--s11">★</span>
+      <span className="bank__star bank__star--s12">✦</span>
+      <span className="bank__star bank__star--s13">★</span>
+      <span className="bank__star bank__star--s14">✦</span>
+      <span className="bank__star bank__star--s15">★</span>
 
       {/* Header */}
       <div className="donate-header">
@@ -119,6 +134,7 @@ export default function DonateSection() {
           </p>
         </div>
       </div>
+
     </section>
   );
 }

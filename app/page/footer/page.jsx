@@ -14,7 +14,7 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="footer">
+    <footer className="footer" id="contact">
       {/* Decorative dots */}
       <span className="footer__dot footer__dot--pink1" />
       <span className="footer__dot footer__dot--pink2" />
