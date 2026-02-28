@@ -7,6 +7,7 @@ import Facilities from './page/facilities/page';
 import Zakat from './page/zakat/page';
 import DonateSection from "../app/page/banks/page";
 import Footer from './page/footer/page';
+import ModalContent from './page/package/page';
 export default function page() {
   return (
    <>
@@ -14,6 +15,7 @@ export default function page() {
    <Navbar />
     <Hero />
     <About />
+    <ModalContent />
     <Facilities />
     <Zakat />
     <DonateSection />
