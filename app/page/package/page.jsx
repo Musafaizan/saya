@@ -166,7 +166,7 @@ export default function Ramadan() {
   const closeModal = () => setOpenCard(null);
 
   return (
-    <section className="ramadan" id="ramadan">
+    <section className="ramadan" id="packages">
 
       {/* ── Hero background image slot ── */}
      

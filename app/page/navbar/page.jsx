@@ -8,7 +8,7 @@ const Navbar = () => {
   const [active, setActive] = useState("Home");
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const links = ["Home", "About us","Programs", "Facilities", "Zakat", "Bank", "Contacts"];
+  const links = ["Home", "About us", "Programs", "Facilities", "Zakat", "Bank", "Contacts"];
 
   return (
     <nav className="navbar">
@@ -28,6 +28,8 @@ const Navbar = () => {
                   ? "#hero"
                   : link === "About us"
                   ? "#about"
+                  : link === "Programs"
+                  ? "#packages"
                   : link === "Facilities"
                   ? "#facilities"
                   : link === "Zakat"
@@ -51,6 +53,11 @@ const Navbar = () => {
                   const aboutSection = document.getElementById("about");
                   if (aboutSection) {
                     aboutSection.scrollIntoView({ behavior: "smooth", block: "start" });
+                  }
+                } else if (link === "Programs") {
+                  const packagesSection = document.getElementById("packages");
+                  if (packagesSection) {
+                    packagesSection.scrollIntoView({ behavior: "smooth", block: "start" });
                   }
                 } else if (link === "Facilities") {
                   const facilitiesSection = document.getElementById("facilities");
