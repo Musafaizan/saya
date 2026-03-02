@@ -2,20 +2,20 @@
 import { useState } from "react";
 import "./nav.css";
 import Image from "next/image";
-import sayalogo from "../../../public/assets/sayalogo.png";
+import sayalogo from "../../../public/assets/sayalogo2.png";
 
 const Navbar = () => {
   const [active, setActive] = useState("Home");
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const links = ["Home", "About us", "Programs", "Facilities", "Zakat", "Bank", "Contacts"];
+  const links = ["Home", "About us", "Programs", "Facilities", "Zakat", "Donate", "Contacts"];
 
   return (
     <nav className="navbar">
       {/* Logo + Brand */}
       <div className="navbar__logo">
         <Image src={sayalogo} alt="Saya Logo" className="navbar__logo-img" />
-        <span className="navbar__brand-name">SAYA</span>
+        {/* <span className="navbar__brand-name">SAYA</span> */}
       </div>
 
       {/* Desktop Links — centered */}
@@ -34,8 +34,8 @@ const Navbar = () => {
                   ? "#facilities"
                   : link === "Zakat"
                   ? "#zakat"
-                  : link === "Bank"
-                  ? "#bank"
+                  : link === "Donate"
+                  ? "#donate"
                   : link === "Contacts"
                   ? "#contact"
                   : "#"
@@ -69,10 +69,10 @@ const Navbar = () => {
                   if (zakatSection) {
                     zakatSection.scrollIntoView({ behavior: "smooth", block: "start" });
                   }
-                } else if (link === "Bank") {
-                  const bankSection = document.getElementById("bank");
-                  if (bankSection) {
-                    bankSection.scrollIntoView({ behavior: "smooth", block: "start" });
+                } else if (link === "Donate") {
+                  const donateSection = document.getElementById("donate");
+                  if (donateSection) {
+                    donateSection.scrollIntoView({ behavior: "smooth", block: "start" });
                   }
                 } else if (link === "Contacts") {
                   const contactSection = document.getElementById("contact");

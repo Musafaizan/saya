@@ -3,7 +3,7 @@ import "./hero.css";
 import Image from "next/image";
 import heroImg from "../../../public/assets/boyimg.png";
 
-const Hero = () => {
+const Hero = ({ onDonateClick }) => {
   return (
     <section className="hero" id="hero">
       {/* Decorative Dots */}
@@ -42,7 +42,7 @@ const Hero = () => {
         <p className="hero__tagline">small act of kindness</p>
 
         <h1 className="hero__heading">
-          SAYA WELLFAIR{" "}
+          SAYA WELFARE{" "}
           <span className="hero__sun" aria-hidden="true">
             <svg width="56" height="56" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
               <circle cx="32" cy="32" r="10" stroke="#F5A623" strokeWidth="3" fill="none"/>
@@ -66,7 +66,10 @@ const Hero = () => {
           and build a brighter future for those in need.
         </p>
 
-        <button className="hero__btn">
+        <button
+          className="hero__btn"
+          onClick={onDonateClick}
+        >
           <span className="hero__btn-icon">♥</span>
           DONATE NOW
         </button>

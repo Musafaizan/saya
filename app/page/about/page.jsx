@@ -1,103 +1,162 @@
 "use client";
+import { useState } from "react";
+import Image from "next/image";
 import "./about.css";
+import img4 from "../../../public/assets/saya3.jpg";
 
-const stats = [
-  { number: "2020", label: "Founded" },
-  { number: "10K+", label: "Families Helped" },
-  { number: "5+",   label: "Sectors Served" },
-  { number: "100%", label: "Community Driven" },
-];
 
-const About = () => {
+
+const YOUTUBE_ID = "8jSdLOWWiiY"; // Charity/welfare video — replace with your own
+
+export default function AboutStory() {
+  const [playing, setPlaying] = useState(false);
+
   return (
-    <section className="about">
+    <section className="story" id="about">
 
-      {/* ── Decorative diamond dots ── */}
-      <span className="about__dot about__dot--orange" />
-      <span className="about__dot about__dot--green"  />
-      <span className="about__dot about__dot--pink"   />
+      {/* Decorative dots */}
+      <span className="story__dot story__dot--orange" />
+      <span className="story__dot story__dot--green"  />
+      <span className="story__dot story__dot--pink"   />
 
-      {/* ── Floating animated stars ── */}
-      <span className="about__star about__star--s1">★</span>
-      <span className="about__star about__star--s2">✦</span>
-      <span className="about__star about__star--s3">★</span>
-      <span className="about__star about__star--s4">✦</span>
-      <span className="about__star about__star--s5">★</span>
-      <span className="about__star about__star--s6">★</span>
-      <span className="about__star about__star--s7">✦</span>
-      <span className="about__star about__star--s8">★</span>
-      <span className="about__star about__star--s9">✦</span>
-      <span className="about__star about__star--s10">★</span>
-      <span className="about__star about__star--s11">★</span>
-      <span className="about__star about__star--s12">✦</span>
-      <span className="about__star about__star--s13">★</span>
-      <span className="about__star about__star--s14">✦</span>
-      <span className="about__star about__star--s15">★</span>
+      {/* Floating stars */}
+      <span className="story__star story__star--s1">★</span>
+      <span className="story__star story__star--s2">✦</span>
+      <span className="story__star story__star--s3">★</span>
+      <span className="story__star story__star--s4">✦</span>
+      <span className="story__star story__star--s5">★</span>
+      <span className="story__star story__star--s6">✦</span>
+      <span className="story__star story__star--s7">★</span>
+      <span className="story__star story__star--s8">✦</span>
 
-      <div className="about__inner" id="about">
+      <div className="story__inner">
 
-        {/* ── Left: Text ── */}
-        <div className="about__content">
+        {/* ══════════════════════════════
+            LEFT COLUMN
+        ══════════════════════════════ */}
+        <div className="story__left">
 
-          <p className="about__tagline">Our Story</p>
+          {/* Text block — top */}
+          <div className="story__text">
+            <p className="story__tagline">Our Story</p>
+            <h2 className="story__heading">
+              About{" "}
+              <span className="story__heading-highlight">Saya Welfare</span>
+            </h2>
+            <div className="story__divider" />
+          </div>
 
-          <h2 className="about__heading">
-            About{" "}
-            <span className="about__heading-highlight">Saya Welfare</span>
-          </h2>
+       
+          <div className="story__img-wrap">
+            
+           {/* <Image
+              src={img4}
+              alt="Saya Welfare community"
+              fill
+              className="story__img"
+              sizes="(max-width: 768px) 100vw, 45vw"
+            />  */}
+           
 
-          <div className="about__divider" />
+              <Image
+               src={img4}
+              alt="Saya Welfare community"
+              className="story__img"
+            />
 
-          <p className="about__body">
-            We started in <strong>2020</strong> when COVID-19 hit Pakistan. What began as a ration
-            drive for white-collar families suffering from the lockdown has grown into a comprehensive
-            welfare organization.
-          </p>
-
-          <p className="about__body">
-            Today, we serve communities across multiple sectors — from <strong>education</strong> to{" "}
-            <strong>healthcare</strong> — always focused on those who need it most.
-          </p>
-
-          <a href="#" className="about__btn">
-            <span className="about__btn-icon">♥</span>
-            Learn More
-          </a>
-
+            {/* Circular rotating badge */}
+            <div className="story__badge">
+              <svg viewBox="0 0 100 100" className="story__badge-svg">
+                <defs>
+                  <path
+                    id="circle"
+                    d="M 50,50 m -37,0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0"
+                  />
+                </defs>
+                <text fontSize="11.5" fontWeight="700" fill="#f07b2f" letterSpacing="3">
+                  <textPath href="#circle">
+                    SAYA WELFARE • SERVING PAKISTAN •
+                  </textPath>
+                </text>
+              </svg>
+              <span className="story__badge-heart">♥</span>
+            </div>
+          </div>
         </div>
 
-        {/* ── Right: Stats Card ── */}
-        <div className="about__right">
+        {/* ══════════════════════════════
+            RIGHT COLUMN
+        ══════════════════════════════ */}
+        <div className="story__right">
 
-          {/* Floating badge */}
-          <div className="about__badge">
-            <span className="about__badge-year">Est. 2020</span>
-            <span className="about__badge-label">Serving Pakistan</span>
+          {/* Video thumbnail with play button */}
+          <div
+            className={`story__video-wrap ${playing ? "story__video-wrap--playing" : ""}`}
+            onClick={() => setPlaying(true)}
+          >
+            {!playing ? (
+              <>
+                {/* Thumbnail image shown before play */}
+                <img
+                  src={`https://img.youtube.com/vi/${YOUTUBE_ID}/maxresdefault.jpg`}
+                  alt="Watch our story"
+                  className="story__video-thumb"
+                />
+                {/* Dark overlay */}
+                <div className="story__video-overlay" />
+                {/* Play button */}
+                <button className="story__play-btn" aria-label="Play video">
+                  <span className="story__play-icon">▶</span>
+                </button>
+                {/* Label */}
+                <span className="story__video-label">Watch Our Story</span>
+              </>
+            ) : (
+              <iframe
+                className="story__iframe"
+                src={`https://www.youtube.com/embed/${YOUTUBE_ID}?autoplay=1&rel=0`}
+                title="Saya Welfare Story"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            )}
           </div>
 
-          {/* Stats grid */}
-          <div className="about__stats">
-            {stats.map((s) => (
-              <div key={s.label} className="about__stat">
-                <span className="about__stat-number">{s.number}</span>
-                <span className="about__stat-label">{s.label}</span>
-              </div>
-            ))}
-          </div>
-
-          {/* Quote card */}
-          <div className="about__quote">
-            <span className="about__quote-mark">"</span>
-            <p className="about__quote-text">
-              Small acts of kindness, when multiplied, can transform entire communities.
+          {/* Description text below video */}
+          <div className="story__desc-block">
+            <p className="story__desc">
+              We started in <strong>2020</strong> when COVID-19 hit Pakistan.
+              What began as a ration drive for white-collar families suffering
+              from the lockdown has grown into a comprehensive welfare
+              organization.
             </p>
+            <p className="story__desc">
+              Today, we serve communities across multiple sectors — from{" "}
+              <strong>education</strong> to <strong>healthcare</strong> —
+              always focused on those who need it most.
+            </p>
+
+            {/* Stats row */}
+            <div className="story__stats">
+              <div className="story__stat">
+                <span className="story__stat-num">10K+</span>
+                <span className="story__stat-lbl">Families Helped</span>
+              </div>
+              <div className="story__stat-sep" />
+              <div className="story__stat">
+                <span className="story__stat-num">5+</span>
+                <span className="story__stat-lbl">Sectors Served</span>
+              </div>
+              <div className="story__stat-sep" />
+              <div className="story__stat">
+                <span className="story__stat-num">2020</span>
+                <span className="story__stat-lbl">Est. Pakistan</span>
+              </div>
+            </div>
           </div>
 
         </div>
-
       </div>
     </section>
   );
-};
-
-export default About;
+}

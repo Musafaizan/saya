@@ -29,12 +29,12 @@
 .navbar__logo {
   display: flex;
   align-items: center;
-  gap: 10px;
+ 
   flex-shrink: 0;
 }
 
 .navbar__logo-img {
-  height: 36px !important;
+  height: 100px !important;
   width: auto !important;
   object-fit: contain;
 }
