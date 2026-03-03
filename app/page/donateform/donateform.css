@@ -30,7 +30,7 @@
   background: #ffffff;
   border-radius: 22px;
   width: 100%;
-  max-width: 400px;          /* smaller: was 480px */
+  max-width: 400px;
   padding: 0 0 28px;
   overflow: hidden;
   box-shadow:
@@ -46,10 +46,10 @@
   to   { opacity: 1; transform: translateY(0)     scale(1);    }
 }
 
-/* ── Top bar ── */
+/* ── Top bar — orange → purple (from donate theme) ── */
 .dform__top-bar {
   height: 5px;
-  background: linear-gradient(90deg, #f07b2f 0%, #f5a623 55%, #4caf82 100%);
+  background: linear-gradient(90deg, #f07b2f, #c026d3);
   width: 100%;
   flex-shrink: 0;
 }
@@ -80,7 +80,7 @@
 }
 
 /* ════════════════════════════════════════
-   ── Header — compact horizontal layout ──
+   ── Header ──
 ════════════════════════════════════════ */
 .dform__header {
   display: flex;
@@ -90,18 +90,18 @@
   border-bottom: 1px solid #f3f4f6;
 }
 
-/* Pulsing heart bubble */
+/* Heart bubble — orange → purple gradient */
 .dform__heart-wrap {
   width: 46px;
   height: 46px;
   border-radius: 14px;
-  background: linear-gradient(135deg, #fff4ed, #fef3c7);
-  border: 1.5px solid rgba(240,123,47,0.18);
+  background: linear-gradient(135deg, rgba(240,123,47,0.12), rgba(192,38,211,0.12));
+  border: 1.5px solid rgba(192,38,211,0.18);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  box-shadow: 0 4px 14px rgba(240,123,47,0.16);
+  box-shadow: 0 4px 14px rgba(192,38,211,0.14);
 }
 
 .dform__heart {
@@ -137,9 +137,13 @@
   line-height: 1.4;
 }
 
+/* Amount highlight — orange → purple gradient text */
 .dform__amount {
   font-weight: 800;
-  color: #f07b2f;
+  background: linear-gradient(90deg, #f07b2f, #c026d3);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 /* ════════════════════════════════════════
@@ -169,12 +173,13 @@
   gap: 5px;
 }
 
+/* Label icon — purple accent */
 .dform__label-icon {
-  color: #f07b2f;
+  color: #c026d3;
   flex-shrink: 0;
 }
 
-/* Input wrapper with icon */
+/* Input wrapper */
 .dform__input-wrap {
   position: relative;
   display: flex;
@@ -189,10 +194,11 @@
   overflow: hidden;
 }
 
+/* Focus — purple border + glow */
 .dform__input-wrap:focus-within {
-  border-color: #f07b2f;
+  border-color: #c026d3;
   background: #fff;
-  box-shadow: 0 0 0 3px rgba(240,123,47,0.10);
+  box-shadow: 0 0 0 3px rgba(192,38,211,0.10);
 }
 
 .dform__input-wrap--error {
@@ -204,6 +210,7 @@
   box-shadow: 0 0 0 3px rgba(239,68,68,0.10);
 }
 
+/* Input icon — purple on focus */
 .dform__input-icon {
   display: flex;
   align-items: center;
@@ -214,7 +221,7 @@
 }
 
 .dform__input-wrap:focus-within .dform__input-icon {
-  color: #f07b2f;
+  color: #c026d3;
 }
 
 .dform__input-wrap--error .dform__input-icon {
@@ -256,7 +263,7 @@
 }
 
 /* ════════════════════════════════════════
-   ── Submit Button ──
+   ── Submit Button — orange → purple ──
 ════════════════════════════════════════ */
 .dform__submit {
   display: inline-flex;
@@ -268,7 +275,7 @@
   margin-top: 6px;
   border-radius: 50px;
   border: none;
-  background: linear-gradient(135deg, #f07b2f 0%, #f5a623 50%, #e07020 100%);
+  background: linear-gradient(90deg, #f07b2f, #c026d3);
   background-size: 200% 100%;
   background-position: 0% 50%;
   color: #fff;
@@ -279,7 +286,7 @@
   text-transform: uppercase;
   cursor: pointer;
   box-shadow:
-    0 6px 20px rgba(240,123,47,0.36),
+    0 8px 24px rgba(192,38,211,0.25),
     inset 0 1px 0 rgba(255,255,255,0.18);
   transition:
     background-position 0.4s ease,
@@ -291,13 +298,13 @@
   background-position: 100% 50%;
   transform: translateY(-2px);
   box-shadow:
-    0 10px 28px rgba(240,123,47,0.44),
+    0 14px 32px rgba(192,38,211,0.35),
     inset 0 1px 0 rgba(255,255,255,0.22);
 }
 
 .dform__submit:active:not(:disabled) {
   transform: translateY(0px);
-  box-shadow: 0 4px 14px rgba(240,123,47,0.30);
+  box-shadow: 0 4px 14px rgba(192,38,211,0.25);
 }
 
 .dform__submit:disabled {
@@ -305,7 +312,7 @@
   cursor: not-allowed;
 }
 
-/* Done / success variant */
+/* Done / success variant — keep green for success feedback */
 .dform__submit--done {
   background: linear-gradient(135deg, #4caf82 0%, #38a169 100%);
   background-size: 200% 100%;
@@ -353,7 +360,7 @@
   text-align: center;
 }
 
-/* Outer ring pulse */
+/* Outer ring pulse — purple tint */
 .dform__success-ring {
   position: relative;
   width: 72px;
@@ -368,7 +375,7 @@
   position: absolute;
   inset: -6px;
   border-radius: 50%;
-  border: 2px solid rgba(76,175,130,0.25);
+  border: 2px solid rgba(192,38,211,0.25);
   animation: ringPulse 1.6s ease-out infinite;
 }
 
@@ -378,15 +385,16 @@
   100% { transform: scale(1.2); opacity: 0; }
 }
 
+/* Success icon — orange → purple gradient */
 .dform__success-icon {
   width: 66px;
   height: 66px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #4caf82, #38a169);
+  background: linear-gradient(135deg, #f07b2f, #c026d3);
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 10px 28px rgba(76,175,130,0.38);
+  box-shadow: 0 10px 28px rgba(192,38,211,0.35);
   animation: successPop 0.45s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
@@ -412,9 +420,13 @@
   max-width: 280px;
 }
 
+/* Amount in success message — gradient text */
 .dform__success-msg strong {
-  color: #f07b2f;
   font-weight: 800;
+  background: linear-gradient(90deg, #f07b2f, #c026d3);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 /* ════════════════════════════════════════

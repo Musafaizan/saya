@@ -18,10 +18,11 @@ export default function Page() {
       <Navbar />
       <Hero onDonateClick={() => setShowBankModal(true)} />
       <About />
-      <ModalContent />
+      
       <Facilities />
-      <Zakat />
+      {/* <Zakat /> */}
       <Donate />
+      <ModalContent />
       <Footer />
 
       {showBankModal && (

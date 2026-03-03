@@ -73,8 +73,8 @@ export default function DonateForm({ amount, onClose }) {
             </div>
             <h3 className="dform__success-title">Thank You!</h3>
             <p className="dform__success-msg">
-              Your donation of <strong>${amount}</strong> has been received.<br />
-              You&apos;re changing lives!
+              Your request of <strong>${amount}</strong> has been received.<br />
+              our&apos; volunteers will contact you soon!
             </p>
             <button className="dform__submit dform__submit--done" onClick={onClose}>
               <Heart size={13} fill="white" stroke="none" /> Close

@@ -9,19 +9,16 @@
   height: 72px;
   font-family: 'DM Sans', sans-serif;
 
-  /* Fixed to top */
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 1000;
 
-  /* Transparent frosted glass */
   background-color: rgba(255, 255, 255, 0.55);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
 
-  /* Subtle bottom border */
   border-bottom: 1px solid rgba(255, 255, 255, 0.4);
 }
 
@@ -29,7 +26,6 @@
 .navbar__logo {
   display: flex;
   align-items: center;
- 
   flex-shrink: 0;
 }
 
@@ -143,6 +139,11 @@
     padding: 0 20px;
   }
 
+  .navbar__logo-img {
+    height: 100px !important;
+    width: auto !important;
+  }
+
   .navbar__links {
     position: fixed;
     top: 72px;
@@ -200,10 +201,16 @@
 
 /* ── Small mobile (≤ 400px) ── */
 @media (max-width: 400px) {
+  .navbar {
+    padding: 0 16px;
+  }
+
+  .navbar__logo-img {
+    height: 100px !important;
+    width: auto !important;
+  }
+
   .navbar__brand-name {
     font-size: 18px;
-  }
-  .navbar__logo-img {
-    height: 28px !important;
   }
 }

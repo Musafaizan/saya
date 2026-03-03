@@ -15,19 +15,17 @@ import {
   HandHeart,
 } from "lucide-react";
 
-import img1 from "../../../public/assets/saya1.jpg";
-import img2 from "../../../public/assets/educationsaya.jpg";
-import img3 from "../../../public/assets/saya3.jpg";
-import img4 from "../../../public/assets/saya6.jpg";
-import img5 from "../../../public/assets/water2saya.jpg";
-import  img6 from "../../../public/assets/orphansaya.jpg";
-import img7 from "../../../public/assets/ramzansaya.jpg";
-import img8 from "../../../public/assets/clothsaya.jpg";
-import img9 from "../../../public/assets/skillsaya.jpg";
+import img1  from "../../../public/assets/saya1.jpg";
+import img2  from "../../../public/assets/educationsaya.jpg";
+import img3  from "../../../public/assets/saya3.jpg";
+import img4  from "../../../public/assets/saya6.jpg";
+import img5  from "../../../public/assets/water2saya.jpg";
+import img6  from "../../../public/assets/orphansaya.jpg";
+import img7  from "../../../public/assets/ramzansaya.jpg";
+import img8  from "../../../public/assets/clothsaya.jpg";
+import img9  from "../../../public/assets/skillsaya.jpg";
 import img10 from "../../../public/assets/widowsaya.avif";
 
-
-// 10 cards — alternating size: "big" | "small"
 const facilities = [
   {
     icon: ShoppingBasket,
@@ -124,7 +122,6 @@ const facilities = [
 const Facilities = () => {
   const trackRef = useRef(null);
 
-  // cursor state: position + which half (left/right) of section
   const [cur, setCur] = useState({ x: 0, y: 0, side: "right", show: false });
 
   const handleMouseMove = useCallback((e) => {
@@ -141,28 +138,22 @@ const Facilities = () => {
     setCur((p) => ({ ...p, show: false }));
   }, []);
 
-  const handleClick = useCallback(
-    (e) => {
-      if (!trackRef.current) return;
-      const rect = e.currentTarget.getBoundingClientRect();
-      const goRight = e.clientX - rect.left >= rect.width / 2;
-      trackRef.current.scrollBy({
-        left: goRight ? 360 : -360,
-        behavior: "smooth",
-      });
-    },
-    []
-  );
+  const handleClick = useCallback((e) => {
+    if (!trackRef.current) return;
+    const rect = e.currentTarget.getBoundingClientRect();
+    const goRight = e.clientX - rect.left >= rect.width / 2;
+    trackRef.current.scrollBy({
+      left: goRight ? 340 : -340,
+      behavior: "smooth",
+    });
+  }, []);
 
   return (
     <section className="facilities" id="facilities">
-
-      {/* ── Decorative diamond dots ── */}
       <span className="fac__dot fac__dot--orange" />
-      <span className="fac__dot fac__dot--green"  />
-      <span className="fac__dot fac__dot--pink"   />
+      <span className="fac__dot fac__dot--green" />
+      <span className="fac__dot fac__dot--pink" />
 
-      {/* ── Floating animated stars ── */}
       <span className="fac__star fac__star--s1">★</span>
       <span className="fac__star fac__star--s2">✦</span>
       <span className="fac__star fac__star--s3">★</span>
@@ -180,27 +171,20 @@ const Facilities = () => {
       <span className="fac__star fac__star--s15">★</span>
 
       <div className="facilities__inner">
-
-        {/* ── Header ── */}
         <div className="facilities__header">
           <p className="facilities__tagline">What We Do</p>
-          <h2 className="facilities__heading">
-            Our <span className="facilities__heading-highlight">Facilities</span>
-          </h2>
           <div className="facilities__divider" />
           <p className="facilities__subtitle">
-            Every initiative we run is built around one goal — reaching those who need help the most.
+            Every initiative we run is built around one goal.
           </p>
         </div>
 
-        {/* ── Scroll zone — cursor is captured here ── */}
         <div
           className="fac__scroll-zone"
           onMouseMove={handleMouseMove}
           onMouseLeave={handleMouseLeave}
           onClick={handleClick}
         >
-          {/* Custom cursor bubble */}
           {cur.show && (
             <div
               className={`fac__cursor fac__cursor--${cur.side}`}
@@ -218,7 +202,6 @@ const Facilities = () => {
             </div>
           )}
 
-          {/* ── Scrollable track ── */}
           <div className="fac__track" ref={trackRef}>
             {facilities.map((item, i) => {
               const Icon = item.icon;
@@ -234,14 +217,13 @@ const Facilities = () => {
                       alt={item.title}
                       fill
                       className="fac__card-bg-img"
-                      sizes="(max-width: 768px) 80vw, 25vw"
+                      sizes="(max-width: 768px) 80vw, 22vw"
+                      style={{ objectFit: "cover" }}
                     />
                   )}
 
-                  {/* Dark gradient overlay */}
                   <div className="fac__card-overlay" />
 
-                  {/* Card content */}
                   <div className="fac__card-content">
                     <div className="fac__card-icon-wrap">
                       <Icon size={24} color="#fff" strokeWidth={2} />
@@ -255,12 +237,10 @@ const Facilities = () => {
             })}
           </div>
 
-          {/* Left / Right fade edges */}
-          <div className="fac__fade fac__fade--left"  />
+          <div className="fac__fade fac__fade--left" />
           <div className="fac__fade fac__fade--right" />
         </div>
 
-        {/* ── Bottom Quote Banner ── */}
         <div className="facilities__quote-banner">
           <span className="facilities__quote-mark">"</span>
           <p className="facilities__quote-text">
@@ -268,7 +248,6 @@ const Facilities = () => {
             continue to expand our reach to serve those who need it most.
           </p>
         </div>
-
       </div>
     </section>
   );

@@ -8,7 +8,7 @@ const Navbar = () => {
   const [active, setActive] = useState("Home");
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const links = ["Home", "About us", "Programs", "Facilities", "Zakat", "Donate", "Contacts"];
+  const links = ["Home", "About us", , "Facilities", , "Donate","Programs"];
 
   return (
     <nav className="navbar">

@@ -4,9 +4,7 @@ import Image from "next/image";
 import "./about.css";
 import img4 from "../../../public/assets/saya3.jpg";
 
-
-
-const YOUTUBE_ID = "8jSdLOWWiiY"; // Charity/welfare video — replace with your own
+const YOUTUBE_ID = "8jSdLOWWiiY"; // Replace with your own
 
 export default function AboutStory() {
   const [playing, setPlaying] = useState(false);
@@ -36,45 +34,38 @@ export default function AboutStory() {
         ══════════════════════════════ */}
         <div className="story__left">
 
-          {/* Text block — top */}
+          {/* Text block */}
           <div className="story__text">
-            <p className="story__tagline">Our Story</p>
+            <p className="story__tagline">About us</p>
             <h2 className="story__heading">
-              About{" "}
-              <span className="story__heading-highlight">Saya Welfare</span>
+              We make your events perfect in every way possible
             </h2>
             <div className="story__divider" />
           </div>
 
-       
+          {/* Image with badge at top-right corner */}
           <div className="story__img-wrap">
-            
-           {/* <Image
+            <Image
               src={img4}
-              alt="Saya Welfare community"
-              fill
-              className="story__img"
-              sizes="(max-width: 768px) 100vw, 45vw"
-            />  */}
-           
-
-              <Image
-               src={img4}
               alt="Saya Welfare community"
               className="story__img"
             />
 
-            {/* Circular rotating badge */}
+            {/* Rotating badge — gradient text + heart */}
             <div className="story__badge">
               <svg viewBox="0 0 100 100" className="story__badge-svg">
                 <defs>
+                  <linearGradient id="badgeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%"   stopColor="#f07b2f" />
+                    <stop offset="100%" stopColor="#c026d3" />
+                  </linearGradient>
                   <path
-                    id="circle"
+                    id="badgeCircle"
                     d="M 50,50 m -37,0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0"
                   />
                 </defs>
-                <text fontSize="11.5" fontWeight="700" fill="#f07b2f" letterSpacing="3">
-                  <textPath href="#circle">
+                <text fontSize="11.5" fontWeight="700" fill="url(#badgeGrad)" letterSpacing="3">
+                  <textPath href="#badgeCircle">
                     SAYA WELFARE • SERVING PAKISTAN •
                   </textPath>
                 </text>
@@ -82,6 +73,7 @@ export default function AboutStory() {
               <span className="story__badge-heart">♥</span>
             </div>
           </div>
+
         </div>
 
         {/* ══════════════════════════════
@@ -89,26 +81,22 @@ export default function AboutStory() {
         ══════════════════════════════ */}
         <div className="story__right">
 
-          {/* Video thumbnail with play button */}
+          {/* Video — no badge */}
           <div
             className={`story__video-wrap ${playing ? "story__video-wrap--playing" : ""}`}
             onClick={() => setPlaying(true)}
           >
             {!playing ? (
               <>
-                {/* Thumbnail image shown before play */}
                 <img
                   src={`https://img.youtube.com/vi/${YOUTUBE_ID}/maxresdefault.jpg`}
                   alt="Watch our story"
                   className="story__video-thumb"
                 />
-                {/* Dark overlay */}
                 <div className="story__video-overlay" />
-                {/* Play button */}
                 <button className="story__play-btn" aria-label="Play video">
                   <span className="story__play-icon">▶</span>
                 </button>
-                {/* Label */}
                 <span className="story__video-label">Watch Our Story</span>
               </>
             ) : (
@@ -122,7 +110,7 @@ export default function AboutStory() {
             )}
           </div>
 
-          {/* Description text below video */}
+          {/* Description */}
           <div className="story__desc-block">
             <p className="story__desc">
               We started in <strong>2020</strong> when COVID-19 hit Pakistan.
@@ -130,29 +118,6 @@ export default function AboutStory() {
               from the lockdown has grown into a comprehensive welfare
               organization.
             </p>
-            <p className="story__desc">
-              Today, we serve communities across multiple sectors — from{" "}
-              <strong>education</strong> to <strong>healthcare</strong> —
-              always focused on those who need it most.
-            </p>
-
-            {/* Stats row */}
-            <div className="story__stats">
-              <div className="story__stat">
-                <span className="story__stat-num">10K+</span>
-                <span className="story__stat-lbl">Families Helped</span>
-              </div>
-              <div className="story__stat-sep" />
-              <div className="story__stat">
-                <span className="story__stat-num">5+</span>
-                <span className="story__stat-lbl">Sectors Served</span>
-              </div>
-              <div className="story__stat-sep" />
-              <div className="story__stat">
-                <span className="story__stat-num">2020</span>
-                <span className="story__stat-lbl">Est. Pakistan</span>
-              </div>
-            </div>
           </div>
 
         </div>
