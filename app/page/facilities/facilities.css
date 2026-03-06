@@ -6,7 +6,7 @@
 .facilities {
   position: relative;
   background-color: #ffffff;
-  padding: 100px 80px;
+  padding: 10px 80px;
   overflow: hidden;
   font-family: 'DM Sans', sans-serif;
   scroll-margin-top: 80px;
@@ -80,9 +80,9 @@
   margin-bottom: 0;
 }
 .facilities__tagline {
-  font-family: 'Dancing Script', cursive;
+  font-family: 'Poppins', sans-serif;
   font-size: 22px;
-  font-weight: 600;
+  font-weight: 700;
   color: #000000;
   margin: 0 0 10px 0;
   letter-spacing: 0.02em;
@@ -129,70 +129,91 @@
 .fac__track {
   display: flex;
   flex-direction: row;
-  align-items: center;
-  gap: 24px;
+  align-items: flex-start;
+  gap: 16px;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
-  padding: 40px 20px;
+  padding: 40px 24px 60px;
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
 .fac__track::-webkit-scrollbar { display: none; }
 
 /* ════════════════════════════════════════
-   CARDS — BASE
+   BIG CARD — with overlay + text (same as before)
 ════════════════════════════════════════ */
 .fac__card {
   position: relative;
   overflow: hidden;
-  border-radius: 0;
+  border-radius: 4px;
   flex-shrink: 0;
   background-color: #1f325a;
-  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
-              box-shadow 0.45s cubic-bezier(0.22, 1, 0.36, 1);
   scroll-snap-align: start;
 }
 
-.fac__card::before {
+.fac__card--big {
+  width: 300px;
+  height: 390px;
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.18);
+}
+
+.fac__card--big::before {
   content: '';
   position: absolute;
   top: 0; left: 0; right: 0;
   height: 4px;
   background: var(--card-color);
-  border-radius: 0;
   z-index: 3;
 }
 
-.fac__card:hover {
-  transform: translateY(-10px) scale(1.015);
-  box-shadow: 0 28px 60px rgba(0, 0, 0, 0.26);
-}
-
-/* ── BIG card ── */
-.fac__card--big {
-  width: 320px;
-  height: 300px;
-}
-
-/* ── SMALL card ── */
-.fac__card--small {
-  width: 210px;
-  height: 240px;
-  margin-top: 40px;
-  margin-bottom: 40px;
-  z-index: 2;
-  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.20);
-}
-
-.fac__card--small:hover {
-  transform: translateY(-14px) scale(1.035);
-  box-shadow: 0 32px 68px rgba(0, 0, 0, 0.28);
+.fac__card--big:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 28px 60px rgba(0, 0, 0, 0.28);
 }
 
 /* ════════════════════════════════════════
-   CARD OVERLAY & CONTENT
+   SMALL CARD — plain photo, no overlay, no text
+   Reference: staggered gallery style (Image 2)
+════════════════════════════════════════ */
+.fac__card--small {
+  width: 220px;
+  height: 280px;
+  margin-top: 60px;             /* vertical stagger */
+  border-radius: 6px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.14);
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.4s ease;
+  /* no dark overlay, no text — just clean photo */
+}
+
+.fac__card--small:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.22);
+}
+
+
+
+/* ════════════════════════════════════════
+   CARD BG IMAGE
+════════════════════════════════════════ */
+.fac__card-bg-img {
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.fac__card--big:hover .fac__card-bg-img {
+  transform: scale(1.07);
+}
+
+.fac__card--small:hover .fac__card-bg-img {
+  transform: scale(1.05);
+}
+
+/* ════════════════════════════════════════
+   BIG CARD — OVERLAY & CONTENT
 ════════════════════════════════════════ */
 .fac__card-overlay {
   position: absolute;
@@ -200,18 +221,18 @@
   z-index: 1;
   background: linear-gradient(
     to top,
-    rgba(0, 0, 0, 0.86) 0%,
-    rgba(0, 0, 0, 0.48) 52%,
-    rgba(0, 0, 0, 0.12) 100%
+    rgba(0, 0, 0, 0.88) 0%,
+    rgba(0, 0, 0, 0.45) 50%,
+    rgba(0, 0, 0, 0.10) 100%
   );
   transition: background 0.45s ease;
 }
-.fac__card:hover .fac__card-overlay {
+.fac__card--big:hover .fac__card-overlay {
   background: linear-gradient(
     to top,
-    rgba(0, 0, 0, 0.78) 0%,
-    rgba(0, 0, 0, 0.30) 52%,
-    rgba(0, 0, 0, 0.05) 100%
+    rgba(0, 0, 0, 0.80) 0%,
+    rgba(0, 0, 0, 0.28) 50%,
+    rgba(0, 0, 0, 0.04) 100%
   );
 }
 
@@ -219,16 +240,16 @@
   position: absolute;
   inset: 0;
   z-index: 2;
-  padding: 24px 22px 26px;
+  padding: 22px 20px 24px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  gap: 10px;
+  gap: 8px;
 }
 
 .fac__card-icon-wrap {
-  width: 50px;
-  height: 50px;
+  width: 46px;
+  height: 46px;
   border-radius: 0;
   background-color: var(--card-color);
   display: flex;
@@ -237,12 +258,12 @@
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.28);
   transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
 }
-.fac__card:hover .fac__card-icon-wrap {
+.fac__card--big:hover .fac__card-icon-wrap {
   transform: scale(1.1) translateY(-2px);
 }
 
 .fac__card-title {
-  font-size: 17px;
+  font-size: 16px;
   font-weight: 800;
   color: #ffffff;
   margin: 0;
@@ -251,44 +272,36 @@
 }
 
 .fac__card-desc {
-  font-size: 13px;
+  font-size: 12.5px;
   font-weight: 400;
   color: rgba(255, 255, 255, 0.80);
   line-height: 1.65;
   margin: 0;
 }
 
-.fac__card--small .fac__card-desc {
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  font-size: 12.5px;
-}
-
 .fac__card-line {
   display: block;
   height: 3px;
-  width: 34px;
+  width: 30px;
   background-color: var(--card-color);
   border-radius: 0;
-  margin-top: 4px;
+  margin-top: 2px;
   opacity: 0.70;
   transition: width 0.45s cubic-bezier(0.22, 1, 0.36, 1),
               opacity 0.45s ease;
 }
-.fac__card:hover .fac__card-line {
-  width: 60px;
+.fac__card--big:hover .fac__card-line {
+  width: 56px;
   opacity: 1;
 }
 
 /* ════════════════════════════════════════
-   CUSTOM CURSOR — smaller size
+   CUSTOM CURSOR
 ════════════════════════════════════════ */
 .fac__cursor {
   position: absolute;
-  width: 40px;     /* ← was 64px */
-  height: 40px;    /* ← was 64px */
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   pointer-events: none;
   z-index: 99;
@@ -308,8 +321,8 @@
 .fac__cursor--left  { background: linear-gradient(135deg, #f5a623, #f07b2f); }
 
 .fac__cursor svg {
-  width: 14px;     /* ← was 20px */
-  height: 14px;    /* ← was 20px */
+  width: 14px;
+  height: 14px;
   flex-shrink: 0;
   transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
 }
@@ -344,6 +357,8 @@
 .facilities__quote-text {
   font-size: 17px;
   font-style: italic;
+  font-family: 'Poppins', sans-serif;
+font-weight: 500;
   color: rgba(255, 255, 255, 0.9);
   line-height: 1.75;
   margin: 0;
@@ -386,8 +401,8 @@
 ════════════════════════════════════════ */
 @media (max-width: 1024px) {
   .facilities { padding: 80px 40px; }
-  .fac__card--big   { width: 300px; height: 270px; }
-  .fac__card--small { width: 190px; height: 220px; margin-top: 40px; margin-bottom: 40px; }
+  .fac__card--big   { width: 270px; height: 350px; }
+  .fac__card--small { width: 195px; height: 250px; margin-top: 55px; }
 }
 
 @media (max-width: 768px) {
@@ -397,12 +412,12 @@
   .fac__cursor { display: none; }
 
   .fac__track {
-    padding: 36px 16px;
-    gap: 20px;
+    padding: 36px 16px 50px;
+    gap: 14px;
   }
 
-  .fac__card--big   { width: 270px; height: 240px; }
-  .fac__card--small { width: 170px; height: 210px; margin-top: 36px; margin-bottom: 36px; }
+  .fac__card--big   { width: 240px; height: 310px; }
+  .fac__card--small { width: 170px; height: 220px; margin-top: 50px; }
 
   .facilities__quote-banner {
     padding: 28px 24px;
@@ -414,11 +429,13 @@
 }
 
 @media (max-width: 480px) {
-  .fac__card--big   { width: 240px; height: 210px; }
-  .fac__card--small { width: 150px; height: 185px; margin-top: 30px; margin-bottom: 30px; }
+  .fac__card--big   { width: 210px; height: 275px; }
+  .fac__card--small { width: 150px; height: 195px; margin-top: 42px; }
 }
 
 @media (max-width: 400px) {
   .facilities { padding: 48px 16px; }
   .facilities__quote-banner { padding: 22px 18px; }
+  .fac__card--big   { width: 190px; height: 250px; }
+  .fac__card--small { width: 135px; height: 172px; margin-top: 38px; }
 }

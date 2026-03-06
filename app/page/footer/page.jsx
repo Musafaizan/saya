@@ -18,7 +18,7 @@ export default function Footer() {
           <div className="footer__contact">
             <p className="footer__label">Get in touch with our team</p>
             <a href="mailto:info@SAYA.com" className="footer__email">
-              info@SAYA.com
+              fuadmufti20@gmail.com
             </a>
           </div>
         </div>

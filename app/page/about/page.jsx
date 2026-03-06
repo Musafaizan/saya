@@ -1,16 +1,41 @@
 "use client";
 import { useState } from "react";
-import Image from "next/image";
+import NextImage from "next/image";
 import "./about.css";
 import img4 from "../../../public/assets/saya3.jpg";
+
+import icon1 from "../../../public/assets/icon1.png";
+import icon2 from "../../../public/assets/icon2.png";
+import icon3 from "../../../public/assets/icon3.png";
+import icon4 from "../../../public/assets/icon4.png";
+import icon5 from "../../../public/assets/icon5.png";
+import icon6 from "../../../public/assets/icon6.png";
+
 
 const YOUTUBE_ID = "8jSdLOWWiiY"; // Replace with your own
 
 export default function AboutStory() {
   const [playing, setPlaying] = useState(false);
 
+  const icons = [icon1, icon2, icon3, icon4, icon5, icon6];
   return (
     <section className="story" id="about">
+
+       {/* Sliding Icons Bar */}
+      <div className="hero__slider-wrapper">
+        <div className="hero__slider-track">
+          {icons.map((icon, idx) => (
+            <div key={`set1-${idx}`} className="hero__slider-item">
+              <NextImage src={icon} alt={`icon ${idx + 1}`} width={64} height={64} />
+            </div>
+          ))}
+          {icons.map((icon, idx) => (
+            <div key={`set2-${idx}`} className="hero__slider-item">
+              <NextImage src={icon} alt={`icon ${idx + 1}`} width={64} height={64} />
+            </div>
+          ))}
+        </div>
+      </div>
 
       {/* Decorative dots */}
       <span className="story__dot story__dot--orange" />
@@ -45,7 +70,7 @@ export default function AboutStory() {
 
           {/* Image with badge at top-right corner */}
           <div className="story__img-wrap">
-            <Image
+            <NextImage
               src={img4}
               alt="Saya Welfare community"
               className="story__img"

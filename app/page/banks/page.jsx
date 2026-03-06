@@ -62,10 +62,8 @@ function BankCard({ bank, delay }) {
           <button
             className={`copy-btn ${copied ? "copy-btn--copied" : ""}`}
             onClick={handleCopy}
-            title="Copy IBAN"
           >
             {copied ? <BsCheckCircleFill /> : <BsClipboard />}
-            <span>{copied ? "Copied" : "Copy"}</span>
           </button>
         </div>
       </div>
@@ -73,34 +71,21 @@ function BankCard({ bank, delay }) {
   );
 }
 
+// Close button page.jsx mein hai — yahan nahi
 export default function DonateSection() {
   return (
-    <section className="donate-section" id="bank">
+    <section className="donate-section">
 
-      {/* ── Decorative diamond dots ── */}
       <span className="dot dot--pink1" />
       <span className="dot dot--pink2" />
       <span className="dot dot--green1" />
       <span className="dot dot--green2" />
 
-      {/* ── Floating animated stars ── */}
       <span className="bank__star bank__star--s1">★</span>
       <span className="bank__star bank__star--s2">✦</span>
       <span className="bank__star bank__star--s3">★</span>
       <span className="bank__star bank__star--s4">✦</span>
-      <span className="bank__star bank__star--s5">★</span>
-      <span className="bank__star bank__star--s6">★</span>
-      <span className="bank__star bank__star--s7">✦</span>
-      <span className="bank__star bank__star--s8">★</span>
-      <span className="bank__star bank__star--s9">✦</span>
-      <span className="bank__star bank__star--s10">★</span>
-      <span className="bank__star bank__star--s11">★</span>
-      <span className="bank__star bank__star--s12">✦</span>
-      <span className="bank__star bank__star--s13">★</span>
-      <span className="bank__star bank__star--s14">✦</span>
-      <span className="bank__star bank__star--s15">★</span>
 
-      {/* Header */}
       <div className="donate-header">
         <p className="donate-header__tagline">Make a Difference Today</p>
         <h2>
@@ -113,24 +98,18 @@ export default function DonateSection() {
         </p>
       </div>
 
-      {/* Bank Cards */}
       <div className="donate-grid">
         {banks.map((bank, i) => (
           <BankCard key={bank.id} bank={bank} delay={0.1 + i * 0.12} />
         ))}
       </div>
 
-      {/* Notice */}
       <div className="donate-notice">
-        <div className="donate-notice__icon">
-          <BsEnvelopeHeart />
-        </div>
         <div className="donate-notice__body">
-          <h3>Share Your Payment Confirmation</h3>
           <p>
             After completing your transfer, please send us your{" "}
-            <strong>payment screenshot or transaction ID</strong> for proper
-            acknowledgment so your generous contribution is recorded.
+            <strong>payment screenshot or transaction ID</strong>{" "}
+            for proper acknowledgment.
           </p>
         </div>
       </div>
