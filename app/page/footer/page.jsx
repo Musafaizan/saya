@@ -1,72 +1,67 @@
 "use client";
-import {
-  BsEnvelope,
-  BsTelephone,
-  BsHeart,
-  BsFacebook,
-  BsInstagram,
-  BsTwitterX,
-  BsYoutube,
-} from "react-icons/bs";
 import "./footer.css";
 
 export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="footer" id="contact">
-      {/* Decorative dots */}
-      <span className="footer__dot footer__dot--pink1" />
-      <span className="footer__dot footer__dot--pink2" />
-      <span className="footer__dot footer__dot--green1" />
-      <span className="footer__dot footer__dot--green2" />
+    <footer className="footer">
+      <div className="footer__container">
 
-      <div className="footer__inner">
-
-        {/* Brand */}
-        <div className="footer__brand">
-          <p className="footer__tagline">Get in Touch</p>
-          <h2 className="footer__title">
-            Serving communities with<br />
-            <span>love and compassion</span>
+        {/* Two-column main section */}
+        <div className="footer__main">
+          <h2 className="footer__headline">
+            Let's talk about how we can<br />
+            transform lives together!
           </h2>
-          <div className="footer__bar" />
-          <p className="footer__desc">
-            Together we can make a difference. Every act of kindness brings
-            us closer to a better world.
-          </p>
+
+          <div className="footer__contact">
+            <p className="footer__label">Get in touch with our team</p>
+            <a href="mailto:info@SAYA.com" className="footer__email">
+              info@SAYA.com
+            </a>
+          </div>
         </div>
 
-        {/* Divider */}
-        <div className="footer__divider" />
+        <div className="footer__line" />
 
-        {/* Contact */}
-        <div className="footer__contact">
-          <a href="mailto:fuadmufti20@gmail.com" className="footer__contact-item">
-            <span className="footer__contact-icon">
-              <BsEnvelope />
-            </span>
-            <span>fuadmufti20@gmail.com</span>
-          </a>
-          <a href="tel:+923321403309" className="footer__contact-item">
-            <span className="footer__contact-icon">
-              <BsTelephone />
-            </span>
-            <span>+92 332 1403309</span>
-          </a>
-        </div>
-
-        {/* Divider */}
-        <div className="footer__divider" />
-
-        {/* Bottom bar */}
+        {/* Bottom bar: logo | copyright | social */}
         <div className="footer__bottom">
-          <p className="footer__copy">
-            © {year} Muhammad Fuad Mufti. All rights reserved.
+          <div className="footer__logo">
+            <span className="footer__logo-icon" aria-hidden="true" />
+            SAYA
+          </div>
+
+          <p className="footer__copyright">
+            SageTheme © {year}. All Rights Reserved.
           </p>
-          <p className="footer__made">
-            Made with <BsHeart className="footer__heart" /> for humanity
-          </p>
+
+          <div className="footer__social">
+            <a href="#" className="footer__social-link" aria-label="Facebook">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+              </svg>
+            </a>
+            <a href="#" className="footer__social-link" aria-label="X (Twitter)">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+              </svg>
+            </a>
+            <a href="#" className="footer__social-link" aria-label="Instagram">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                <circle cx="12" cy="12" r="4"/>
+                <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+              </svg>
+            </a>
+            <a href="#" className="footer__social-link" aria-label="LinkedIn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                <rect x="2" y="9" width="4" height="12"/>
+                <circle cx="4" cy="4" r="2"/>
+              </svg>
+            </a>
+          </div>
         </div>
 
       </div>
