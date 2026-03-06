@@ -13,6 +13,12 @@ import {
   Shirt,
   BookOpen,
   HandHeart,
+
+
+
+
+
+  
 } from "lucide-react";
 
 import img1  from "../../../public/assets/saya1.jpg";
