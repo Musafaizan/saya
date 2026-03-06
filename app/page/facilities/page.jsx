@@ -13,14 +13,20 @@ import {
   Shirt,
   BookOpen,
   HandHeart,
+
+
+
+
+
+  
 } from "lucide-react";
 
-import img1  from "../../../public/assets/saya1.jpg";
-import img2  from "../../../public/assets/educationsaya.jpg";
-import img3  from "../../../public/assets/saya3.jpg";
-import img4  from "../../../public/assets/saya6.jpg";
-import img5  from "../../../public/assets/water2saya.jpg";
-import img6  from "../../../public/assets/orphansaya.jpg";
+import s15  from "../../../public/assets/s15.jpeg";
+import s18  from "../../../public/assets/s18.jpeg";
+import s19  from "../../../public/assets/s19.jpeg";
+import se  from "../../../public/assets/se.jpeg";
+import sg  from "../../../public/assets/sg.jpeg";
+import sd  from "../../../public/assets/sd.jpeg";
 import img7  from "../../../public/assets/ramzansaya.jpg";
 import img8  from "../../../public/assets/clothsaya.jpg";
 import img9  from "../../../public/assets/skillsaya.jpg";
@@ -33,7 +39,7 @@ const facilities = [
     description:
       "Supporting white-collar families who were suffering from lockdown with essential food supplies and household necessities.",
     color: "#f07b2f",
-    image: img1,
+    image: s15,
     size: "big",
   },
   {
@@ -42,7 +48,7 @@ const facilities = [
     description:
       "Bearing educational expenses for white-collar families' children and orphans to ensure they continue their studies.",
     color: "#4caf82",
-    image: img2,
+    image: s18,
     size: "small",
   },
   {
@@ -51,7 +57,7 @@ const facilities = [
     description:
       "Providing regular ration and helping with household expenses of widows and white-collar families in need.",
     color: "#1f325a",
-    image: img3,
+    image: s19,
     size: "big",
   },
   {
@@ -60,7 +66,7 @@ const facilities = [
     description:
       "Providing healthcare facilities and arranging medical camps for underprivileged communities across Pakistan.",
     color: "#e91e8c",
-    image: img4,
+    image: se,
     size: "small",
   },
   {
@@ -69,8 +75,17 @@ const facilities = [
     description:
       "Installing water filtration plants in rural communities to provide access to clean and safe drinking water.",
     color: "#0ea5e9",
-    image: img5,
+    image: sg,
     size: "big",
+  },
+   {
+    icon: Utensils,
+    title: "Iftar Programs",
+    description:
+      "Organizing community Iftar gatherings during Ramadan for underprivileged families and individuals.",
+    color: "#f5a623",
+    image: img7,
+    size: "small",
   },
   {
     icon: Baby,
@@ -78,16 +93,7 @@ const facilities = [
     description:
       "Providing comprehensive care, education and emotional support to orphaned children across Pakistan.",
     color: "#a855f7",
-    image: img6,
-    size: "small",
-  },
-  {
-    icon: Utensils,
-    title: "Iftar Programs",
-    description:
-      "Organizing community Iftar gatherings during Ramadan for underprivileged families and individuals.",
-    color: "#f5a623",
-    image: img7,
+    image: sd,
     size: "big",
   },
   {
@@ -121,7 +127,6 @@ const facilities = [
 
 const Facilities = () => {
   const trackRef = useRef(null);
-
   const [cur, setCur] = useState({ x: 0, y: 0, side: "right", show: false });
 
   const handleMouseMove = useCallback((e) => {
@@ -217,16 +222,16 @@ const Facilities = () => {
                       alt={item.title}
                       fill
                       className="fac__card-bg-img"
-                      sizes="(max-width: 768px) 80vw, 22vw"
+                      sizes="(max-width: 768px) 60vw, 22vw"
                       style={{ objectFit: "cover" }}
                     />
                   )}
 
+                  {/* Overlay + text — DONO cards pe, big aur small dono */}
                   <div className="fac__card-overlay" />
-
                   <div className="fac__card-content">
                     <div className="fac__card-icon-wrap">
-                      <Icon size={24} color="#fff" strokeWidth={2} />
+                      <Icon size={20} color="#fff" strokeWidth={2} />
                     </div>
                     <h3 className="fac__card-title">{item.title}</h3>
                     <p className="fac__card-desc">{item.description}</p>

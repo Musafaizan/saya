@@ -23,9 +23,10 @@
 
 .footer__headline {
   font-size: clamp(26px, 3.2vw, 30px);
-  font-weight: 900;
+  font-weight: 700;
   line-height: 1.2;
   margin: 0;
+   font-family: 'Poppins', sans-serif;
   color: #1a1a1a;
   max-width: 480px;
   text-align: left;
@@ -41,14 +42,16 @@
   color: #aaaaaa;
   margin: 0 0 8px 0;
   font-weight: 400;
+   font-family: 'Poppins', sans-serif;
   letter-spacing: 0.2px;
 }
 
 .footer__email {
   font-size: clamp(20px, 2.8vw, 28px);
-  font-weight: 800;
+  font-weight: 700;
   color: #f5a623;
   text-decoration: none;
+   font-family: 'Poppins', sans-serif;
   border-bottom: 2px solid #f5a623;
   padding-bottom: 3px;
   transition: all 0.25s ease;
