@@ -33,7 +33,7 @@
 .hero__content {
   position: absolute;
   top: 45%;
-  left: 55%;
+  left: 52%;
   transform: translate(-50%, -50%);
   text-align: center;
   z-index: 10;
@@ -41,7 +41,8 @@
 }
 
 .hero__tagline {
-  font-family: 'Dancing Script', cursive;
+     font-family: 'Poppins', sans-serif;
+     font-weight: 700;
   color: #f5c842;
   font-size: 22px;
   margin-bottom: 40px;
@@ -58,7 +59,7 @@
 }
 
 .hero__cursive {
-  font-family: 'Dancing Script', cursive;
+     font-family: 'Poppins', sans-serif;
   color: #f5c842;
   font-size: 85px;
 }

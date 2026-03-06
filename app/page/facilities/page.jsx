@@ -17,7 +17,7 @@ import {
 
 import s15  from "../../../public/assets/s15.jpeg";
 import s18  from "../../../public/assets/s18.jpeg";
-import img3  from "../../../public/assets/saya3.jpg";
+import s19  from "../../../public/assets/s19.jpeg";
 import se  from "../../../public/assets/se.jpeg";
 import sg  from "../../../public/assets/sg.jpeg";
 import sd  from "../../../public/assets/sd.jpeg";
@@ -51,7 +51,7 @@ const facilities = [
     description:
       "Providing regular ration and helping with household expenses of widows and white-collar families in need.",
     color: "#1f325a",
-    image: img3,
+    image: s19,
     size: "big",
   },
   {
@@ -72,6 +72,15 @@ const facilities = [
     image: sg,
     size: "big",
   },
+   {
+    icon: Utensils,
+    title: "Iftar Programs",
+    description:
+      "Organizing community Iftar gatherings during Ramadan for underprivileged families and individuals.",
+    color: "#f5a623",
+    image: img7,
+    size: "small",
+  },
   {
     icon: Baby,
     title: "Orphan Care",
@@ -79,15 +88,6 @@ const facilities = [
       "Providing comprehensive care, education and emotional support to orphaned children across Pakistan.",
     color: "#a855f7",
     image: sd,
-    size: "small",
-  },
-  {
-    icon: Utensils,
-    title: "Iftar Programs",
-    description:
-      "Organizing community Iftar gatherings during Ramadan for underprivileged families and individuals.",
-    color: "#f5a623",
-    image: img7,
     size: "big",
   },
   {
