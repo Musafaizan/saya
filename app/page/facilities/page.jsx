@@ -121,7 +121,6 @@ const facilities = [
 
 const Facilities = () => {
   const trackRef = useRef(null);
-
   const [cur, setCur] = useState({ x: 0, y: 0, side: "right", show: false });
 
   const handleMouseMove = useCallback((e) => {
@@ -217,16 +216,16 @@ const Facilities = () => {
                       alt={item.title}
                       fill
                       className="fac__card-bg-img"
-                      sizes="(max-width: 768px) 80vw, 22vw"
+                      sizes="(max-width: 768px) 60vw, 22vw"
                       style={{ objectFit: "cover" }}
                     />
                   )}
 
+                  {/* Overlay + text — DONO cards pe, big aur small dono */}
                   <div className="fac__card-overlay" />
-
                   <div className="fac__card-content">
                     <div className="fac__card-icon-wrap">
-                      <Icon size={24} color="#fff" strokeWidth={2} />
+                      <Icon size={20} color="#fff" strokeWidth={2} />
                     </div>
                     <h3 className="fac__card-title">{item.title}</h3>
                     <p className="fac__card-desc">{item.description}</p>
