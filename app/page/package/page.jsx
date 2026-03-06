@@ -19,39 +19,25 @@ const Ramadan = () => {
     };
 
     const handleDonateScroll = () => {
-        const section = document.getElementById('donate');
-        if (section) section.scrollIntoView({ behavior: "smooth" });
+        // 1. Popup band karo
         setActiveSection(null);
+
+        // 2. Scroll lock manually hata do (useEffect se pehle)
+        document.body.style.position = '';
+        document.body.style.top = '';
+        document.body.style.left = '';
+        document.body.style.right = '';
+        document.body.style.width = '';
+        document.body.style.overflowY = '';
+        window.scrollTo(0, scrollYRef.current);
+
+        // 3. Thodi der baad donate section par smooth scroll
+        setTimeout(() => {
+            const section = document.getElementById('donate');
+            if (section) section.scrollIntoView({ behavior: 'smooth' });
+        }, 50);
     };
 
-    // ── Scroll lock — popup khulne par page freeze, band hone par wahi wapas ──
-    useEffect(() => {
-        if (activeSection) {
-            scrollYRef.current = window.scrollY;
-            document.body.style.position = 'fixed';
-            document.body.style.top = `-${scrollYRef.current}px`;
-            document.body.style.left = '0';
-            document.body.style.right = '0';
-            document.body.style.width = '100%';
-            document.body.style.overflowY = 'scroll';
-        } else {
-            document.body.style.position = '';
-            document.body.style.top = '';
-            document.body.style.left = '';
-            document.body.style.right = '';
-            document.body.style.width = '';
-            document.body.style.overflowY = '';
-            window.scrollTo(0, scrollYRef.current);
-        }
-        return () => {
-            document.body.style.position = '';
-            document.body.style.top = '';
-            document.body.style.left = '';
-            document.body.style.right = '';
-            document.body.style.width = '';
-            document.body.style.overflowY = '';
-        };
-    }, [activeSection]);
 
     useEffect(() => {
         const handleClickOutside = (e) => {
