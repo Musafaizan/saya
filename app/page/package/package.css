@@ -87,7 +87,6 @@
   z-index: 1;
 }
 
-/* raise z-index when popup is nearby */
 .imageContainer1:has(.popup1),
 .imageContainer2:has(.popup2),
 .imageContainer3:has(.popup3) {
@@ -217,11 +216,11 @@
   opacity: 1 !important;
 }
 
-/* ========== POPUP 1 — right of image 1 ========== */
+/* ========== POPUP 1 ========== */
 .popup1 {
   position: absolute;
   top: -100px;
-  left: 70%;           /* image ke right side mein */
+  left: 70%;
   width: 600px;
   background: #ffffff;
   border-radius: 16px;
@@ -231,10 +230,10 @@
   text-align: left;
 }
 
-/* ========== POPUP 2 — above image 2, centered ========== */
+/* ========== POPUP 2 ========== */
 .popup2 {
   position: absolute;
-  bottom: 5%;          /* image ke upar */
+  bottom: 5%;
   left: 50%;
   transform: translateX(-50%);
   width: 420px;
@@ -246,11 +245,11 @@
   text-align: left;
 }
 
-/* ========== POPUP 3 — left of image 3 ========== */
+/* ========== POPUP 3 ========== */
 .popup3 {
   position: absolute;
   top: 15px;
-  right: 93%;           /* image ke left side mein */
+  right: 93%;
   width: 420px;
   padding: 30px;
   background: #fff;
@@ -260,7 +259,7 @@
   text-align: left;
 }
 
-/* ========== POPUP SHARED STYLES ========== */
+/* ========== POPUP SHARED ========== */
 .popup1Title,
 .popup2Title,
 .popup3Title {
@@ -407,6 +406,7 @@
   text-align: left;
 }
 
+/* Desktop button styles */
 .iftar2Btn,
 .iftar3Btn {
   padding: 12px;
@@ -420,7 +420,7 @@
   cursor: pointer;
   transition: 0.3s ease;
   width: 47%;
-  margin-left: 110px;
+  margin-left: 100px;
 }
 
 .iftar2Btn:hover,
@@ -445,7 +445,6 @@
   .reportImage1, .reportImage2, .reportImage3 { width: 240px; height: 290px; }
   .imagesWrapper { margin-bottom: 700px; }
 
-  /* small screens pe fixed center */
   .popup1, .popup2, .popup3 {
     position: fixed;
     top: 50%; left: 50%;
@@ -500,6 +499,7 @@
     opacity: 1 !important;
   }
 
+  /* ── Popups mobile: fixed center, height kam ── */
   .popup1, .popup2, .popup3 {
     position: fixed !important;
     top: 50% !important;
@@ -507,14 +507,30 @@
     transform: translate(-50%, -50%) !important;
     width: 92vw !important;
     max-width: 480px !important;
-    max-height: 85vh !important;
+    max-height: 75vh !important;   /* ← popup1 height kam */
     overflow-y: auto !important;
-    padding: 20px !important;
+    padding: 18px !important;
     z-index: 9999 !important;
+    border-radius: 14px !important;
+  }
+  .popup2 {
+     max-height: 32vh !important; 
   }
 
   .popup1Cards { flex-direction: column; gap: 20px; }
   .package1Card { width: 100%; }
+
+  /* ── Donate buttons: center + full width ── */
+  .iftar2Btn,
+  .iftar3Btn {
+    display: block;
+    width: 80% !important;        /* ← wide width */
+    margin: 0 auto !important;    /* ← center */
+    padding: 13px 0;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 10px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -529,6 +545,12 @@
   .popup1Desc, .popup2Desc, .popup3Desc { font-size: 12px; }
   .package1Price { font-size: 24px; }
   .package1Name { font-size: 13px; }
+
+  .iftar2Btn,
+  .iftar3Btn {
+    width: 45% !important;
+    font-size: 13px;
+  }
 }
 
 @media (max-width: 360px) {
