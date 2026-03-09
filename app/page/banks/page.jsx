@@ -76,7 +76,7 @@ export default function DonateSection() {
   return (
     <section className="donate-section">
 
-      <span className="dot dot--pink1" />
+    {/*  <span className="dot dot--pink1" />
       <span className="dot dot--pink2" />
       <span className="dot dot--green1" />
       <span className="dot dot--green2" />
@@ -84,14 +84,11 @@ export default function DonateSection() {
       <span className="bank__star bank__star--s1">★</span>
       <span className="bank__star bank__star--s2">✦</span>
       <span className="bank__star bank__star--s3">★</span>
-      <span className="bank__star bank__star--s4">✦</span>
+      <span className="bank__star bank__star--s4">✦</span> */}
 
       <div className="donate-header">
         <p className="donate-header__tagline">Make a Difference Today</p>
-        <h2>
-          Your Generosity<br />
-          <span>Transforms Lives</span>
-        </h2>
+        
         <div className="donate-header__bar" />
         <p className="donate-header__sub">
           Every contribution, big or small, brings hope to those in need.
