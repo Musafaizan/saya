@@ -7,6 +7,10 @@ import {
 } from "lucide-react";
 
 export default function DonateForm({ amount, onClose }) {
+
+  // YOUR EMAIL
+  const FORM_EMAIL = "fuadmufti20@gmail.com";
+
   const [form, setForm]           = useState({ name: "", email: "", phone: "" });
   const [errors, setErrors]       = useState({});
   const [submitted, setSubmitted] = useState(false);
@@ -40,12 +44,43 @@ export default function DonateForm({ amount, onClose }) {
 
   async function handleSubmit(e) {
     e.preventDefault();
+
     const errs = validate();
-    if (Object.keys(errs).length) { setErrors(errs); return; }
+    if (Object.keys(errs).length) {
+      setErrors(errs);
+      return;
+    }
+
     setLoading(true);
-    await new Promise(r => setTimeout(r, 1400));
+
+    const donationAmount = amount;
+
+    try {
+
+      await fetch(`https://formsubmit.co/ajax/${FORM_EMAIL}`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json"
+        },
+        body: JSON.stringify({
+          _subject: `New Donation Request - $${donationAmount}`,
+          Name: form.name,
+          Email: form.email,
+          Phone: form.phone,
+          Donation_Amount: `$${donationAmount}`,
+          _template: "table"
+        })
+      });
+
+      setSubmitted(true);
+
+    } catch (error) {
+      alert("Failed to send form.");
+      console.error(error);
+    }
+
     setLoading(false);
-    setSubmitted(true);
   }
 
   const fields = [
@@ -71,11 +106,14 @@ export default function DonateForm({ amount, onClose }) {
                 <CheckCircle size={30} strokeWidth={2} color="#fff" />
               </div>
             </div>
+
             <h3 className="dform__success-title">Thank You!</h3>
+
             <p className="dform__success-msg">
               Your request of <strong>${amount}</strong> has been received.<br />
               our&apos; volunteers will contact you soon!
             </p>
+
             <button className="dform__submit dform__submit--done" onClick={onClose}>
               <Heart size={13} fill="white" stroke="none" /> Close
             </button>
@@ -86,6 +124,7 @@ export default function DonateForm({ amount, onClose }) {
               <div className="dform__heart-wrap">
                 <Heart size={20} fill="#f07b2f" stroke="none" className="dform__heart" />
               </div>
+
               <div className="dform__header-text">
                 <h3 className="dform__title">Complete Donation</h3>
                 <p className="dform__subtitle">
@@ -95,16 +134,20 @@ export default function DonateForm({ amount, onClose }) {
             </div>
 
             <form className="dform__form" onSubmit={handleSubmit} noValidate>
+
               {fields.map(({ id, name, type, label, placeholder, icon: Icon, autoComplete }) => (
                 <div className="dform__field" key={id}>
+
                   <label className="dform__label" htmlFor={id}>
                     <Icon size={12} strokeWidth={2.5} className="dform__label-icon" />
                     {label}
                   </label>
+
                   <div className={`dform__input-wrap ${errors[name] ? "dform__input-wrap--error" : ""}`}>
                     <span className="dform__input-icon">
                       <Icon size={14} strokeWidth={2} />
                     </span>
+
                     <input
                       id={id}
                       name={name}
@@ -116,6 +159,7 @@ export default function DonateForm({ amount, onClose }) {
                       autoComplete={autoComplete}
                     />
                   </div>
+
                   {errors[name] && <span className="dform__error">{errors[name]}</span>}
                 </div>
               ))}
@@ -126,17 +170,25 @@ export default function DonateForm({ amount, onClose }) {
                 disabled={loading}
               >
                 {loading ? (
-                  <><Loader2 size={14} className="dform__spinner-icon" /> Processing…</>
+                  <>
+                    <Loader2 size={14} className="dform__spinner-icon" />
+                    Processing…
+                  </>
                 ) : (
-                  <><Send size={13} strokeWidth={2.5} /> Send &amp; Donate ${amount}</>
+                  <>
+                    <Send size={13} strokeWidth={2.5} />
+                    Send & Donate ${amount}
+                  </>
                 )}
               </button>
+
             </form>
 
             <div className="dform__secure">
               <Lock size={10} strokeWidth={2.5} />
-              Encrypted &amp; secure
+              Encrypted & secure
             </div>
+
           </>
         )}
       </div>
