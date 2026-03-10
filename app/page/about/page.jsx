@@ -18,24 +18,20 @@ export default function AboutStory() {
   const [playing, setPlaying] = useState(false);
 
   const icons = [icon1, icon2, icon3, icon4, icon5, icon6];
+  const iconsRepeated = [...icons, ...icons, ...icons, ...icons];
   return (
     <section className="story" id="about">
 
-       {/* Sliding Icons Bar */}
-      <div className="hero__slider-wrapper">
-        <div className="hero__slider-track">
-          {icons.map((icon, idx) => (
-            <div key={`set1-${idx}`} className="hero__slider-item">
-              <NextImage src={icon} alt={`icon ${idx + 1}`} width={64} height={64} />
-            </div>
-          ))}
-          {icons.map((icon, idx) => (
-            <div key={`set2-${idx}`} className="hero__slider-item">
-              <NextImage src={icon} alt={`icon ${idx + 1}`} width={64} height={64} />
-            </div>
-          ))}
+  <div className="hero__slider-wrapper">
+    <div className="hero__slider-track">
+      {iconsRepeated.map((icon, idx) => (
+        <div key={idx} className="hero__slider-item">
+          <NextImage src={icon} alt={`icon ${idx + 1}`} width={64} height={64} />
         </div>
-      </div>
+      ))}
+    </div>
+  </div>
+
 
       {/* Decorative dots 
       <span className="story__dot story__dot--orange" />
