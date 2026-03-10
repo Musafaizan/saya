@@ -171,8 +171,8 @@
   font-family: Poppins, sans-serif;
   font-size: 15px;
   position: absolute;
-  top: 140px;
-  min-width: 235px;
+  top: 127px;
+  min-width: 200px;
   left: 30px;
   right: 100px;
 }
@@ -181,7 +181,7 @@
 .reportImage2 svg,
 .reportImage3 svg {
   position: absolute;
-  bottom: 35px;
+  bottom: 18px;
   left: 19%;
   transform: translateX(-50%);
   font-size: 45px;
@@ -566,7 +566,6 @@
     opacity: 1 !important;
   }
 
-  /* ── Popups mobile: fixed center, height kam ── */
   .popup1,
   .popup2,
   .popup3 {
@@ -587,8 +586,6 @@
   .popup2 {
     max-height: 36vh !important;
   }
-
- 
 
   .popup1Cards {
     flex-direction: column;
@@ -648,7 +645,8 @@
   .reportImage3 p {
     font-size: 13px;
     right: 20px;
-    top: 100px;
+    top: 87px;
+    max-width: 50px;
   }
 
   .popup1Title,
@@ -703,7 +701,7 @@
 .ramadan {
   position: relative;
   /*background: linear-gradient(160deg, #0d2b1e 0%, #111827 55%, #1a1a2e 100%);*/
-  padding: 65px 40px;
+  padding: 30px 40px;
   overflow: hidden;
   font-family: 'DM Sans', sans-serif;
   scroll-margin-top: 80px;
