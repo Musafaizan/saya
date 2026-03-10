@@ -10,7 +10,7 @@
   font-family: 'DM Sans', sans-serif;
 }
 
-/* ── Decorative dots & stars (subtle) ── */
+/* ── Decorative dots & stars (subtle) ── 
 .donate__dot {
   position: absolute;
   width: 10px;
@@ -34,7 +34,7 @@
 .donate__star--s3  { top: 22%; right: 10%; }
 .donate__star--s5  { bottom: 18%; left: 15%; }
 .donate__star--s7  { bottom: 25%; right: 12%; }
-.donate__star--s9  { top: 55%; left: 6%; }
+.donate__star--s9  { top: 55%; left: 6%; }*/
 
 /* ── Inner container ── */
 .donate__inner {
@@ -52,16 +52,16 @@
   font-weight: 700;
   letter-spacing: 2px;
   color: #888;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   margin: 0 0 12px;
   text-transform: uppercase;
 }
 
 .donate__heading {
-  font-size: clamp(32px, 5.5vw, 32px);
+  font-size:  47px;
   font-weight: 700;
   line-height: 1.1;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   color: #000;
   margin: 0 0 16px;
 }
@@ -69,14 +69,14 @@
 .donate__subtitle {
   color: #a3a3a3;
     margin: 0 0 8px;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 .donate__description {
   font-size: 15px;
   color: #666;
   line-height: 1.6;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   max-width: 520px;
 }
 

@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./nav.css";
 import Image from "next/image";
 import sayalogo from "../../../public/assets/sayalogo2.png";
@@ -8,100 +8,101 @@ const Navbar = () => {
   const [active, setActive] = useState("Home");
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const links = ["Home", "About us", , "Facilities", , "Donate","Programs"];
+  const links = ["Home", "About us", "Facilities", "Donate" , "Programs"];
+
+  // Close menu on resize back to desktop
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 899) setMenuOpen(false);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  // Prevent body scroll when mobile menu open
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [menuOpen]);
+
+  const handleScroll = (link) => {
+    const idMap = {
+      "Home": "hero",
+      "About us": "about",
+      "Facilities": "facilities",
+      "Donate": "donate",
+      "Programs": "packages",
+
+    };
+    const id = idMap[link];
+    if (id) {
+      const section = document.getElementById(id);
+      if (section) {
+        setTimeout(() => {
+          section.scrollIntoView({ behavior: "smooth", block: "start" });
+        }, menuOpen ? 350 : 0);
+      }
+    }
+    setActive(link);
+    setMenuOpen(false);
+  };
 
   return (
-    <nav className="navbar">
-      {/* Logo + Brand */}
-      <div className="navbar__logo">
-        <Image src={sayalogo} alt="Saya Logo" className="navbar__logo-img" />
-        {/* <span className="navbar__brand-name">SAYA</span> */}
-      </div>
+    <>
+      <nav className="navbar">
+        {/* Logo */}
+        <div className="navbar__logo">
+          <Image src={sayalogo} alt="Saya Logo" className="navbar__logo-img" />
+        </div>
 
-      {/* Desktop Links — centered */}
-      <ul className={`navbar__links ${menuOpen ? "navbar__links--open" : ""}`}>
-        {links.map((link) => (
-          <li key={link} className="navbar__item">
-            <a
-              href={
-                link === "Home"
-                  ? "#hero"
-                  : link === "About us"
-                  ? "#about"
-                  : link === "Programs"
-                  ? "#packages"
-                  : link === "Facilities"
-                  ? "#facilities"
-                  : link === "Zakat"
-                  ? "#zakat"
-                  : link === "Donate"
-                  ? "#donate"
-                  : link === "Contacts"
-                  ? "#contact"
-                  : "#"
-              }
-              className={`navbar__link ${active === link ? "navbar__link--active" : ""}`}
-              onClick={(e) => {
-                e.preventDefault();
+        {/* Desktop Links — centered */}
+        <ul className="navbar__links">
+          {links.map((link) => (
+            <li key={link} className="navbar__item">
+              <a
+                href="#"
+                className={`navbar__link ${active === link ? "navbar__link--active" : ""}`}
+                onClick={(e) => { e.preventDefault(); handleScroll(link); }}
+              >
+                {link}
+              </a>
+            </li>
+          ))}
+        </ul>
 
-                if (link === "Home") {
-                  const heroSection = document.getElementById("hero");
-                  if (heroSection) {
-                    heroSection.scrollIntoView({ behavior: "smooth", block: "start" });
-                  }
-                } else if (link === "About us") {
-                  const aboutSection = document.getElementById("about");
-                  if (aboutSection) {
-                    aboutSection.scrollIntoView({ behavior: "smooth", block: "start" });
-                  }
-                } else if (link === "Programs") {
-                  const packagesSection = document.getElementById("packages");
-                  if (packagesSection) {
-                    packagesSection.scrollIntoView({ behavior: "smooth", block: "start" });
-                  }
-                } else if (link === "Facilities") {
-                  const facilitiesSection = document.getElementById("facilities");
-                  if (facilitiesSection) {
-                    facilitiesSection.scrollIntoView({ behavior: "smooth", block: "start" });
-                  }
-                } else if (link === "Zakat") {
-                  const zakatSection = document.getElementById("zakat");
-                  if (zakatSection) {
-                    zakatSection.scrollIntoView({ behavior: "smooth", block: "start" });
-                  }
-                } else if (link === "Donate") {
-                  const donateSection = document.getElementById("donate");
-                  if (donateSection) {
-                    donateSection.scrollIntoView({ behavior: "smooth", block: "start" });
-                  }
-                } else if (link === "Contacts") {
-                  const contactSection = document.getElementById("contact");
-                  if (contactSection) {
-                    contactSection.scrollIntoView({ behavior: "smooth", block: "start" });
-                  }
-                }
+        {/* Hamburger */}
+        <button
+          className={`navbar__hamburger ${menuOpen ? "navbar__hamburger--open" : ""}`}
+          onClick={() => setMenuOpen((prev) => !prev)}
+          aria-label={menuOpen ? "Close menu" : "Open menu"}
+          aria-expanded={menuOpen}
+        >
+          <span />
+          <span />
+          <span />
+        </button>
+      </nav>
 
-                setActive(link);
-                setMenuOpen(false);
-              }}
-            >
-              {link}
-            </a>
-          </li>
-        ))}
-      </ul>
-
-      {/* Hamburger */}
-      <button
-        className={`navbar__hamburger ${menuOpen ? "navbar__hamburger--open" : ""}`}
-        onClick={() => setMenuOpen(!menuOpen)}
-        aria-label="Toggle menu"
+      {/* Mobile Full-Screen Menu */}
+      <div
+        className={`navbar__mobile-menu ${menuOpen ? "navbar__mobile-menu--open" : ""}`}
+        aria-hidden={!menuOpen}
       >
-        <span />
-        <span />
-        <span />
-      </button>
-    </nav>
+        <ul className="navbar__mobile-links">
+          {links.map((link) => (
+            <li key={link}>
+              <a
+                href="#"
+                className={`navbar__mobile-link ${active === link ? "navbar__mobile-link--active" : ""}`}
+                onClick={(e) => { e.preventDefault(); handleScroll(link); }}
+              >
+                {link}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </>
   );
 };
 

@@ -37,12 +37,12 @@ export default function AboutStory() {
         </div>
       </div>
 
-      {/* Decorative dots */}
+      {/* Decorative dots 
       <span className="story__dot story__dot--orange" />
       <span className="story__dot story__dot--green"  />
-      <span className="story__dot story__dot--pink"   />
+      <span className="story__dot story__dot--pink"   />*/}
 
-      {/* Floating stars */}
+      {/* Floating stars 
       <span className="story__star story__star--s1">★</span>
       <span className="story__star story__star--s2">✦</span>
       <span className="story__star story__star--s3">★</span>
@@ -50,7 +50,7 @@ export default function AboutStory() {
       <span className="story__star story__star--s5">★</span>
       <span className="story__star story__star--s6">✦</span>
       <span className="story__star story__star--s7">★</span>
-      <span className="story__star story__star--s8">✦</span>
+      <span className="story__star story__star--s8">✦</span>*/}
 
       <div className="story__inner">
 

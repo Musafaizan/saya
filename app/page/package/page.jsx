@@ -19,10 +19,10 @@ const Ramadan = () => {
     };
 
     const handleDonateScroll = () => {
-        // 1. Popup band karo
+        
         setActiveSection(null);
 
-        // 2. Scroll lock manually hata do (useEffect se pehle)
+       
         document.body.style.position = '';
         document.body.style.top = '';
         document.body.style.left = '';
@@ -31,7 +31,7 @@ const Ramadan = () => {
         document.body.style.overflowY = '';
         window.scrollTo(0, scrollYRef.current);
 
-        // 3. Thodi der baad donate section par smooth scroll
+        
         setTimeout(() => {
             const section = document.getElementById('donate');
             if (section) section.scrollIntoView({ behavior: 'smooth' });
@@ -60,10 +60,10 @@ const Ramadan = () => {
     return (
         <section className="ramadan" id="packages">
 
-            <Image src={heroBg} alt="Ramadan" fill className="ramadan__bg-img" />
+            {/*<Image src={heroBg} alt="Ramadan" fill className="ramadan__bg-img" />*/}
             <div className="ramadan__overlay" />
 
-            <span className="rm__dot rm__dot--orange" />
+           {/* <span className="rm__dot rm__dot--orange" />
             <span className="rm__dot rm__dot--green"  />
             <span className="rm__dot rm__dot--pink"   />
             <span className="rm__dot rm__dot--green2" />
@@ -79,7 +79,7 @@ const Ramadan = () => {
             <span className="rm__star rm__star--s9">✦</span>
             <span className="rm__star rm__star--s10">★</span>
             <span className="rm__star rm__star--s11">★</span>
-            <span className="rm__star rm__star--s12">✦</span>
+            <span className="rm__star rm__star--s12">✦</span>*/}
 
             <div className="ramadan__inner">
 

@@ -63,7 +63,7 @@
 }
 
 .imageContainer1 {
-  left: 90px;
+  left: 50px;
 }
 
 .imageContainer2 {
@@ -72,7 +72,7 @@
 }
 
 .imageContainer3 {
-  right: 90px;
+  right: 50px;
 }
 
 .reportImage1,
@@ -703,7 +703,7 @@
 ════════════════════════════════════════ */
 .ramadan {
   position: relative;
-  background: linear-gradient(160deg, #0d2b1e 0%, #111827 55%, #1a1a2e 100%);
+  /*background: linear-gradient(160deg, #0d2b1e 0%, #111827 55%, #1a1a2e 100%);*/
   padding: 65px 40px;
   overflow: hidden;
   font-family: 'DM Sans', sans-serif;
@@ -711,20 +711,20 @@
   height: 870px;
 }
 
-.ramadan__bg-img {
+/*.ramadan__bg-img {
   object-fit: cover !important;
   object-position: center !important;
   z-index: 0;
-}
+}*/
 
 .ramadan__overlay {
   position: absolute;
   inset: 0;
   z-index: 1;
-  background: rgba(0, 0, 0, 0.72);
+  /*background: rgba(0, 0, 0, 0.72);*/
 }
 
-.rm__dot {
+/*.rm__dot {
   position: absolute;
   width: 0px;
   height: 0px;
@@ -875,7 +875,7 @@
   right: 4%;
   opacity: 0.55;
   animation: rmStarFloat1 3.8s ease-in-out infinite 1.6s;
-}
+}*/
 
 .ramadan__inner {
   position: relative;
@@ -894,8 +894,8 @@
 }
 
 .ramadan__tagline {
-  font-family: 'Dancing Script', cursive;
-  font-size: 22px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 20px;
   font-weight: 600;
   color: #f5a623;
   margin: 0 0 10px;
@@ -903,9 +903,9 @@
 
 .ramadan__heading {
   font-family: 'DM Sans', sans-serif;
-  font-size: clamp(32px, 5vw, 56px);
+  font-size:  48px;
   font-weight: 900;
-  color: #ffffff;
+  color: black;
   line-height: 1.1;
   margin: 0 0 18px;
 }
@@ -920,10 +920,10 @@
 
 .ramadan__subtitle {
   font-size: 16px;
-  color: rgba(255, 255, 255, 0.65);
+  color: rgb(67, 65, 65);
   line-height: 1.8;
   margin: 0;
-  font-style: italic;
+  font-family: 'DM Sans' sans-serif;
 }
 
 .ramadan__subtitle strong {

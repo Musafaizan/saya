@@ -65,12 +65,12 @@
    DONATE SECTION
 ══════════════════════════════════════ */
 .donate-section {
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'DM Sans' sans-serif;
   width: 100%;
   position: relative;
 }
 
-/* ── Floating Diamond Dots ── */
+/* ── Floating Diamond Dots ── 
 .dot {
   position: absolute;
   width: 12px;
@@ -83,9 +83,9 @@
 .dot--pink1  { background: var(--pink);  top: 40px;    left: 8%;   animation: bankDot1 4.0s ease-in-out infinite; }
 .dot--pink2  { background: var(--pink);  top: 60px;    right: 12%; animation: bankDot2 3.7s ease-in-out infinite 0.7s; }
 .dot--green1 { background: var(--green); bottom: 40px; left: 5%;   animation: bankDot3 4.4s ease-in-out infinite 1.2s; }
-.dot--green2 { background: var(--green); bottom: 30px; right: 6%;  animation: bankDot1 3.9s ease-in-out infinite 0.4s; }
+.dot--green2 { background: var(--green); bottom: 30px; right: 6%;  animation: bankDot1 3.9s ease-in-out infinite 0.4s; } */
 
-/* ── Floating Stars ── */
+/* ── Floating Stars ── 
 .bank__star {
   position: absolute;
   z-index: 0;
@@ -97,7 +97,7 @@
 .bank__star--s1 { font-size: 13px; color: var(--pink);   top: 8%;  left: 2%;   opacity: 0.60; animation: bStarFloat1 4.2s ease-in-out infinite; }
 .bank__star--s2 { font-size: 9px;  color: var(--pink);   top: 18%; left: 18%;  opacity: 0.40; animation: bStarFloat2 5.1s ease-in-out infinite 0.5s; }
 .bank__star--s3 { font-size: 16px; color: var(--pink);   top: 6%;  right: 10%; opacity: 0.50; animation: bStarFloat3 3.9s ease-in-out infinite 1.2s; }
-.bank__star--s4 { font-size: 10px; color: var(--pink);   top: 30%; left: 15%;  opacity: 0.45; animation: bStarFloat1 4.8s ease-in-out infinite 0.7s; }
+.bank__star--s4 { font-size: 10px; color: var(--pink);   top: 30%; left: 15%;  opacity: 0.45; animation: bStarFloat1 4.8s ease-in-out infinite 0.7s; }*/
 
 /* ── Header ── */
 .donate-header {
@@ -109,15 +109,15 @@
 }
 
 .donate-header__tagline {
-  font-family: 'Dancing Script', cursive;
-  font-size: 16px;
+ font-family: 'DM Sans' sans-serif;
+  font-size: 18px;
   color: var(--orange-2);
   margin: 0 0 8px;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
 
-.donate-header h2 {
+/*.donate-header h2 {
   font-family: 'DM Sans', sans-serif;
   font-size: 22px;
   font-weight: 800;
@@ -140,11 +140,12 @@
   background: linear-gradient(90deg, var(--orange-2), var(--orange));
   border-radius: 99px;
   margin: 8px auto;
-}
+}*/
 
 .donate-header__sub {
   font-size: 12px;
   font-style: italic;
+  font-family: 'DM Sans' sans-serif;
   color: var(--mid);
   max-width: 380px;
   margin: 0 auto;

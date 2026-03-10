@@ -23,17 +23,17 @@ export default function Donate() {
 
   return (
     <>
-      <section className="donate" id="donate">
 
-        {/* Decorative elements – kept subtle */}
+      {/* Decorative elements – kept subtle 
         <span className="donate__dot donate__dot--orange" />
         <span className="donate__dot donate__dot--green"  />
         <span className="donate__dot donate__dot--pink"   />
 
         {["s1","s3","s5","s7","s9"].map(k => (
           <span key={k} className={`donate__star donate__star--${k}`}>★</span>
-        ))}
+        ))}*/}
 
+      <section className="donate" id="donate">
         <div className="donate__inner">
 
           {/* Header */}

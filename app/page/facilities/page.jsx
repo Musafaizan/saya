@@ -155,7 +155,7 @@ const Facilities = () => {
 
   return (
     <section className="facilities" id="facilities">
-      <span className="fac__dot fac__dot--orange" />
+      {/*<span className="fac__dot fac__dot--orange" />
       <span className="fac__dot fac__dot--green" />
       <span className="fac__dot fac__dot--pink" />
 
@@ -173,7 +173,7 @@ const Facilities = () => {
       <span className="fac__star fac__star--s12">✦</span>
       <span className="fac__star fac__star--s13">★</span>
       <span className="fac__star fac__star--s14">✦</span>
-      <span className="fac__star fac__star--s15">★</span>
+      <span className="fac__star fac__star--s15">★</span>*/}
 
       <div className="facilities__inner">
         <div className="facilities__header">
