@@ -214,7 +214,7 @@
 @media (max-width: 479px) {
   .navbar { padding: 0 16px; height: 65px; }
   .navbar__logo-img { height: 75px !important; }
-  .navbar__mobile-menu { top: 65px; height: calc(45vh - 65px); }
+  .navbar__mobile-menu { top: 65px; height: calc(45vh - 30px); }
   .navbar__mobile-link { font-size: 15px; padding: 13px 0; }
 }
 

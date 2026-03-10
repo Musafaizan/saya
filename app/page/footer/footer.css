@@ -1,7 +1,8 @@
 .footer {
   background: #ffffff;
   color: #111111;
-  padding: 60px 80px 40px;
+  padding: 00px 80px 40px;
+  margin-top: -55px;
   font-family: 'DM Sans', sans-serif;
   border-top: none;
 }
@@ -120,7 +121,7 @@
 }
 
 @media (max-width: 768px) {
-  .footer { padding: 48px 24px 32px; }
+  .footer { padding: 25px 24px 32px; }
   .footer__main { flex-direction: column; gap: 28px; margin-bottom: 36px; }
   .footer__headline { font-size: 28px; }
   .footer__email { font-size: 22px; }
@@ -128,7 +129,7 @@
 }
 
 @media (max-width: 480px) {
-  .footer__headline { font-size: 24px; }
+  .footer__headline { font-size: 22px; }
   .footer__email { font-size: 20px; }
   .footer__logo { font-size: 16px; }
 }
